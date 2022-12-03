@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhoscallHW</title>
     <style>
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
         *{
             margin: 0;
             padding: 0;
             list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
         }
         .navbar{
             width: 100%;
@@ -80,25 +82,30 @@
             bottom: 0;
             right: 0;
         }
+        .banner .slogan{
+            width: 100%;
+            position: absolute;
+            top: 250px;
+            left: 250px;
+        }
+        .banner .slogan {
+            width: 500px;
+        }
         .banner .banner-txt{
             position: absolute;
-            top: 150px;
-            left: 350px;
+            top: 320px;
+            left: 250px;
         }
         .banner .banner-txt h1{
-            color: rgb(47, 239, 47);
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        .banner .banner-txt p{
-            font-size: 24px;
+            font-size: 36px;
             margin-bottom: 20px;
+            font-weight: 500;
         }
         .banner .banner-txt a{
             text-decoration: none;
-            font-size: 14px;
+            font-size: 22px;
             font-weight: 700;
-            padding: 10px 40px;
+            padding: 10px 70px;
             background-color: rgb(47, 239, 47);
             color: #fff;
             border-radius: 200px;
@@ -107,21 +114,37 @@
             background-color: rgb(48, 248, 48);
         }
         .banner .banner-txt .discount{
-            font-size: 5px;
+            font-size: 16px;
             font-weight: 700;
             margin-top: 10px;
             color: rgb(47, 239, 47);
+            padding-left: 15px;
         }
         .market-survey{
             text-align: center;
             margin-top: 50px;
+            font-size: 24px;
             font-weight: 700;
+        }
+        .survey{
+            display: inline-block;
+            position: relative;
+        }
+        .market-survey p::before{
+            content: '※';
+            position: absolute;
+            top: -5px;
+            right: -15px;
+            font-size: 16px;
+        }
+        .market-survey h2{
+            font-size: 36px;
         }
         .market-survey h2 span{
             color: rgb(47, 239, 47);
         }
-        .market-survey-text{
-            font-size: 8px;
+        .survey-text{
+            font-size: 14px;
             margin-top: 10px;
             color: rgba(57, 56, 56, 0.623);
         }
@@ -146,16 +169,16 @@
         }
         .feature-container .feature-text h3{
             color: rgb(47, 239, 47);
-            font-size: 30px;
+            font-size: 36px;
             font-weight: 700;
         }
         .feature-container .feature-text p{
             font-weight: 500;
-            font-size: 18px;
+            font-size: 22px;
             margin-top: 15px;
         }
-        .feature-text .market-survey-text{
-            font-size: 8px;
+        .feature-text .survey-text p{
+            font-size: 12px;
         }
         .feature-container .feature-pic{
             width: 50%;
@@ -171,7 +194,7 @@
         .service .service-title{
             text-align: center;
             padding: 20px 0;
-            font-size: 24px;
+            font-size: 36px;
         }
         .service .service-container{
             display: flex;
@@ -188,22 +211,25 @@
             justify-content: center;
         }
         .service .service-item-pic img{
-            width: 100px;
+            width: 150px;
         }
         .service .service-item-text{
             text-align: center;
             padding-bottom: 40px;
         }
         .service .service-item-text h4{
-            font-size: 16px;
+            font-size: 18px;
         }
         .service .service-item-text p{
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
         }
         .customer-service{
             width: 100%;
             margin-top: 100px;
+        }
+        .customer-service-title h3{
+            font-size: 36px;
         }
         .customer-service .customer-service-title{
             text-align: center;
@@ -227,10 +253,11 @@
         }
         .customer-service-item .customer-service-item-text h3{
             padding: 10px 0;
-            font-size: 26px;
+            font-size: 28px;
         }
         .customer-service-item .customer-service-item-text p{
             padding: 10px 0;
+            font-size: 18px;
         }
         .customer-service-item .customer-service-item-pic{
             width: 100%;
@@ -247,11 +274,11 @@
             background-color: rgb(245, 243, 243);
         }
         .apply h3{
-            font-size: 24px;
+            font-size: 36px;
             padding-bottom: 15px;
         }
         .apply p{
-            font-size: 12px;
+            font-size: 16px;
             color: rgb(47, 239, 47);
             font-weight: 700;
         }
@@ -265,14 +292,13 @@
             display: flex;
             justify-content: space-between;
             margin: auto;
-            margin-bottom: 20px;
             padding-top: 30px;
         }
         .footer-container{
             display: flex;
         }
         .footer-container-item{
-            padding: 0 20px;
+            padding: 0 30px 0 0;
         }
         .footer-container-item h4{
             color: #fff;
@@ -328,7 +354,6 @@
         }
         .footer-info .copyright{
             color: #d5d5d5;
-            padding-left: 20px;
         }
         .footer-info .copyright a{
             text-decoration: none;
@@ -376,24 +401,28 @@
         <img src="/Day2HW-Whocall/whoscallimg/valid-number-1440.jpg" alt="">
         <img class="decoration-big" src="/Day2HW-Whocall/whoscallimg/asset 7.svg" alt="banner裝飾大">
         <img class="decoration-small" src="/Day2HW-Whocall/whoscallimg/asset 8.svg" alt="banner裝飾小">
+        <div class="slogan">
+            <img src="/Day2HW-Whocall/whoscallimg/h1.webp" alt="">
+        </div>
         <div class="banner-txt">
-            <h1>whoscall 認證號碼</h1>
-            <p>電話接通前<br>讓專業形象為你開場!</p>
+            <h1>電話接通前<br>讓專業形象為你開場!</h1>
             <a href="#">立即申請</a>
             <p class="discount">企業方案優惠$200/月 起</p>            
         </div>
     </div>  
     <div class="market-survey">
-        <p>根據市場調查顯示※</p>
+        <div class="survey">
+            <p>根據市場調查顯示</p>
+        </div>
         <h2>超過<span>60%</span>的民眾會選擇忽視或<br>拒接陌生來電</h2>
-        <p class="market-survey-text">※Pollster 波仕特線上市調 (2014)</p>
+        <p class="survey-text">※Pollster 波仕特線上市調 (2014)</p>
     </div>
     <div class="feature-container">
         <div class="feature-item">
             <div class="feature-text">
                 <h3>提高2倍電話接聽意願</h3>
                 <p>Whoscall 認證號碼讓您在全台百萬用戶的來電視窗，顯示公司名稱、姓名等資訊。從此不再是客戶的陌生來電！</p>
-                <p class="market-survey-text">※Whoscall 調查 (2018)</p>
+                <p class="survey-text">※Whoscall 調查 (2018)</p>
             </div>
             <div class="feature-pic">
                 <img src="/Day2HW-Whocall/whoscallimg/asset 0.webp" alt="">
