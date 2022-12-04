@@ -1,0 +1,1 @@
+$(function(){$(".banner-top .btn-close-banner").on("click",function(){$("body").removeClass("banner-top-show")}),$(".banner-left-bottom .btn-close-banner").on("click",function(){$(".banner-left-bottom").removeClass("open")});var n=0,e=setInterval(function(){1==n&&($(".banner-left-bottom").addClass("open"),clearInterval(e),n=0),n++},2e4)});
