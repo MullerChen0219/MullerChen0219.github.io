@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whoscall</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .high-light{
+            background: linear-gradient(180deg,transparent 0,transparent 50%,rgba(151,245,151,.5) 0,rgba(151,245,151,.5));
+        }
+        .main-header{
+            width: 100%;
+            display: flex;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 10px 1px 1px #ccc;
+            position: fixed;
+            z-index: 1;
+            margin-bottom: 90px;
+        }
+        .header-content{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+        }
+        .main-logo{
+            width: 150px;
+            background: url(/Day2HW-Whocall/whoscallimg/asset\ 6.svg) no-repeat center center;
+            margin-right: 10px;
+        }
+        .main-logo h1{
+            color: transparent;
+        }
+        .main-logo a{
+            text-decoration: none;
+        }
+        .main-nav{
+            flex-grow: 1;
+        }
+        .main-nav a{
+            color: #000;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .main-nav a:hover{
+            color: #00C300;
+            transition: .3s;
+        }
+        .btn-download{
+            width: 150px;
+            padding: 10px 35px;
+            color: #fff;
+            font-size: 16px;
+            background-color: #00C300;
+            border: none;
+            border-radius: 100px;
+        }
+        .btn-download:hover{
+            background-color: rgb(47, 239, 47);
+            transition: .3s;
+        }
+        
+        .section-banner{
+            width: 100%;
+            background-image: url(https://d3qzy1rn79qj7v.cloudfront.net/hero_images/valid-number-1440.jpg);
+            background-size: cover;
+            background-position: center center;
+            padding-top: 90px;
+        }
+        .banner-content{
+            width: 960px;
+            margin: auto;
+            padding: 10px 0;
+        }
+        .banner-content .banner-title{
+            width: 550px;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        .banner-content .banner-title img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .banner-content h2{
+            font-size: 32px;
+            padding-left: 20px;
+        }
+        .banner-content a{
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            color: #fff;
+            background-color: #00C300;
+            padding: 15px 50px;
+            margin: 10px 0 0 20px;
+            border-radius: 100px;
+            font-size: 22px;
+        }
+        .banner-content a:hover{
+            background-color: rgb(47, 239, 47);
+            transition: .3s;
+        }
+        .banner-content span{
+            font-size: 16px;
+            color: #00C300;
+            font-weight: 700;
+            padding-left: 25px;
+        }
+        .corner{
+            height: 300px;
+        }
+            
+        
+        .corner:last-child{
+            text-align: right;
+        }
+        .corner img{
+            vertical-align: middle;
+            height: 100%;
+        }
+        .section-phone-call{
+            width: 100%;
+            padding: 100px 0;
+        }
+        .phone-call{
+            width: 960px;
+            margin: auto;
+        }
+        .phone-call .main-title{
+            text-align: center;
+        }
+        .phone-call .main-title h2{
+            font-size: 32px;
+            padding: 10px 0;
+        }
+        .phone-call .main-title h2 span{
+            color: #00C300;
+        }
+        .phone-call .main-title p{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .phone-call .main-title .mute{
+            font-size: 14px;
+            padding-top: 15px;
+            color: #717b8e;
+        }
+        .phone-call .item-list .item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .phone-call .item-list .item:nth-child(even){
+            flex-direction: row-reverse;
+        }
+        .phone-call .item-list .item .item-text{
+            width: 465px;
+        }
+        .phone-call .item-list .item .item-text h3{
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #00C300;
+        }
+        .phone-call .item-list .item .item-text sup{
+            color: #717b8e;
+            font-size: 14px;
+        }
+        .phone-call .item-list .item .item-text p{
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .phone-call .item-list .item .item-text .mute{
+            font-size: 14px;
+            color: #717b8e;
+        }
+        .phone-call .item-list .item .item-pic{
+            width: 465px;
+        }
+        .phone-call .item-list .item .item-pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .section-business{
+            width: 100%;
+            background-color: #f5f6f9;
+            padding: 100px 0;
+        }
+        .business{
+            width: 960px;
+            margin: auto;
+        }
+        .business .main-title{
+            text-align: center;
+        }
+        .business .main-title h2{
+            font-size: 32px;
+            padding-bottom: 50px;
+        }
+        .business .item-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .business .item-list .item{
+            width: 300px;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .business .item-list .item-pic{
+            width: 150px;
+            margin: auto;
+        }
+        .business .item-list .item-pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .business .item-list .item-text h3{
+            padding-bottom: 5px;
+        }
+        .business .item-list .item-text p{
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        .section-customer{
+            width: 100%;
+            padding: 100px 0;
+        }
+        .customer{
+            width: 960px;
+            margin: auto;
+        }
+        .customer .main-title{
+            text-align: center;
+        }
+        .customer .main-title h2{
+            font-size: 32px;
+            padding-bottom: 20px;
+        }
+        .customer .item-list{
+            display: flex;
+            justify-content: center;
+        }
+        .customer .item-list .item{
+            width: 278px;
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .customer .item-list .item .quote{
+            transform: rotateY(180deg);
+            text-align: right;
+        }
+        .customer .item-list .item h3{
+            font-size: 24px;
+            padding: 5px 0;
+        }
+        .customer .item-list .item p{
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .customer .item-list .trade-mark{
+            width: 170px;
+            margin-left: auto;
+            margin-top: 8px;
+        }
+        .customer .item-list .trade-mark img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .section-apply{
+            width: 100%;
+            background-color: #f5f6f9;
+        }
+        .apply{
+            width: 960px;
+            margin: auto;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .apply h2{
+            font-size: 32px;
+        }
+        .apply p{
+            font-size: 16px;
+            color:#00C300;
+            padding: 30px 0;
+            font-weight: 700;
+        }
+        .section-form{
+            width: 100%;
+        }
+        .form{
+            width: 960px;
+            margin: auto;
+            padding-top: 100px;
+        }
+        .form h3{
+            font-size: 24px;
+        }
+        .form-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .form-list .list-item{
+            width: 398px;
+            margin: 10px 60px 10px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-list .list-item .label-text{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .form-list .list-item p{
+            font-size: 12px;
+            color: #717b8e;
+        }
+        .form-list .list-item .input-text{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-list .list-item select{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .apply-text{
+            font-size: 14px;
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+        .btn-apply{
+            display: block;
+            margin: auto;
+            margin-bottom: 100px;
+            padding: 10px 60px;
+            border-radius: 30px;
+            border: none;
+            background-color: #00C300;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .btn-apply:hover{
+            background-color: rgb(47, 239, 47);
+        }
+        .main-footer{
+            width: 100%;
+            background-color: #2c323f;
+            padding: 50px 0;
+        }
+        .footer-content{
+            width: 960px;
+            margin: auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-link{
+            display: flex;
+        }
+        .footer-link .col{
+            padding-right: 40px;
+        }
+        .footer-link .col h3{
+            color: #fff;
+            font-size: 16px;
+        }
+        .footer-link .col .link-list li{
+            margin: 10px 0;
+        }
+        .footer-link .col .link-list a{
+            text-decoration: none;
+            color: hsla(225, 25%, 97%, 0.7);            
+        }
+        .footer-link .col .link-list a:hover{
+            color: #fff;
+            transition: .3s;
+        }
+        .follow-us p{
+            color: #fff;
+            padding-left: 10px;
+        }
+        .footer-social .icon-list{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .footer-social .icon-list a{
+            text-decoration: none;
+            font-size: 30px;
+            margin: 0 10px;
+            color: hsla(225, 25%, 97%, 0.7); 
+        }
+        .footer-social .icon-list a:hover{
+            color: #fff;
+            transition: .3s;
+        }
+        .footer-social .power-by img{
+            vertical-align: middle;
+        }
+        .footer-copyright{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid hsla(225, 25%, 97%, 0.7);
+        }
+        .footer-copyright .text{
+            display: flex;
+        }
+        .footer-copyright .text p{
+            color: hsla(225, 25%, 97%, 0.7);
+        }
+        .footer-copyright .text a{
+            text-decoration: none;
+            margin: 0 15px;
+            color: hsla(225, 25%, 97%, 0.7);
+        }
+        .footer-copyright .text a:hover{
+            color: #fff;
+            transition: .3s;
+        }
+        .footer-copyright .language a{
+            text-decoration: none;
+            color: hsla(225, 25%, 97%, 0.7);
+            font-size: 16px;
+        }
+        .footer-copyright .language select{
+            border: none;
+            background-color: #2c323f;
+            color: hsla(225, 25%, 97%, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="main-logo">
+                <a href="#">
+                    <h1>Whoscall</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="#">Whoscall 進階版</a>
+                <a href="#">Whoscall 認證號碼</a>
+                <a href="#">認識 Whoscall</a>
+                <a href="#">Whoscall 專欄</a>
+                <a href="#">常見問題</a>
+            </nav>
+            <button class="btn-download">
+                免費下載
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="section-banner">
+            <div class="banner">
+                <div class="corner">
+                    <img src="/Day2HW-Whocall/whoscallimg/asset 7.svg" alt="banner裝飾">
+                </div>
+                <div class="banner-content">
+                    <div class="banner-title">
+                        <img src="/Day2HW-Whocall/whoscallimg/h1.webp" alt="slogan">
+                    </div>
+                    <h2>電話接通前<br>
+                    讓專業形象為你開場！</h2>
+                    <a href="#">立即申請</a>
+                    <span>企業方案優惠 $200/月 起</span>
+                </div>
+                <div class="corner">
+                    <img src="/Day2HW-Whocall/whoscallimg/asset 8.svg" alt="banner裝飾">
+                </div>
+            </div>
+        </section>
+        <section class="section-phone-call">
+            <div class="phone-call">
+                <div class="main-title">
+                    <p>根據市場調查顯示<sup>※</sup></p>
+                    <h2>超過<span>60%</span>的民眾會選擇忽視或拒接陌生來電。</h2>
+                    <p class="mute">※Pollster 波仕特線上市調 (2014)</p>
+                </div>
+                <div class="item-list">
+                    <div class="item">
+                        <div class="item-text">
+                            <h3>提高<span class="high-light">2倍</span>電話接聽意願<sup>※</sup></h3>
+                            <p>Whoscall 認證號碼讓您在全台百萬用戶的來電視窗，顯示公司名稱、姓名等資訊。從此不再是客戶的陌生來電！</p>
+                            <p class="mute">※Whoscall 調查 (2018)</p>
+                        </div>
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 0.webp" alt="提高2倍電話接聽意願">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-text">
+                            <h3>創造主動<span class="high-light">回撥</span>的潛在客戶</h3>
+                            <p>在來電記錄中，留下最佳企業形象，創造客戶主動聯繫的契機。</p>
+                        </div>
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 1.webp" alt="創造主動回撥的潛在客戶">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-text">
+                            <h3>眾多來電<span class="high-light">一秒</span>看見</h3>
+                            <p>不在客戶的通訊錄裡，也能於通話紀錄顯示企業資訊，輕鬆提升工作效率與拓客成功率。</p>
+                        </div>
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 2.webp" alt="眾多來電一秒看見">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-business">
+            <div class="business">
+                <div class="main-title">
+                    <h2>拓展業務的最佳夥伴！</h2>
+                </div>
+                <div class="item-list">
+                    <div class="item">
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 3.svg" alt="實名認證">
+                        </div>
+                        <div class="item-text">
+                            <h3>實名認證</h3>
+                            <p>Whoscall 嚴謹的實名審核，讓認證過的電話號碼更值得信任。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 4.svg" alt="支援手機雙系統">
+                        </div>
+                        <div class="item-text">
+                            <h3>支援手機雙系統</h3>
+                            <p>支援在 iOS 與 Android 系統上的來電顯示，全台潛在客戶一網打盡。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-pic">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 5.svg" alt="一對一專人服務">
+                        </div>
+                        <div class="item-text">
+                            <h3>一對一專人服務</h3>
+                            <p>專人服務、輕鬆申請
+                            認證流程不再複雜惱人</p>
+                        </div>
+                    </div>             
+                </div>
+            </div>
+        </section>
+        <section class="section-customer">
+            <div class="customer">
+                <div class="main-title">
+                    <h2>用戶經驗分享</h2>
+                </div>
+                <div class="item-list">
+                    <div class="item">
+                        <div class="quote">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 9.svg" alt="quote">
+                        </div>
+                        <h3>沒想到更多客戶主動回電！</h3>
+                        <p>申請 Whoscall 認證號碼後，<span class="high-light">業務撥打出去的未接來電，客戶更樂意回電了</span>，保險方案的介紹與推動也比以前更即時有效！</p>
+                        <div class="trade-mark">
+                            <img src="/Day2HW-Whocall/whoscallimg/國泰人壽.png" alt="國泰人壽">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="quote">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 9.svg" alt="quote">
+                        </div>
+                        <h3>高接聽率讓合作更有效率！</h3>
+                        <p>設定 Whoscall 認證號碼後，<span class="high-light">電商客戶的接聽率明顯比以前高很多！</span>和客戶討論案子的速度更順利、也更能即時給客戶完整的營運建議！</p>
+                        <div class="trade-mark">
+                            <img src="/Day2HW-Whocall/whoscallimg/91APP.png" alt="91APP">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="quote">
+                            <img src="/Day2HW-Whocall/whoscallimg/asset 9.svg" alt="quote">
+                        </div>
+                        <h3>接聽意願提高，配送更快速！</h3>
+                        <p>透過 Ｗhoscall Number 服務，讓顧客接聽意願變高，也讓我們的<span class="high-light">物流司機更容易掌握顧客的狀況</span>，網購商品能更即時且有效率的送達。</p>
+                        <div class="trade-mark">
+                            <img src="/Day2HW-Whocall/whoscallimg/PCHOME.png" alt="PCHOME">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-apply">
+            <div class="apply">
+                <h2>馬上申請企業專屬認證號碼！</h2>
+                <p>每筆 $200/月 起，申辦號碼越多、優惠更多！</p>
+            </div>
+        </section>
+        <section class="section-form">
+            <form action="" class="form">
+                <h3>填寫申請人資料</h3>
+                <div class="form-list">
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            真實姓名<sup>*</sup>
+                        </label>
+                        <input type="text"placeholder="真實姓名" class="input-text">
+                    </div>
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            公司名稱<sup>*</sup>
+                        </label>
+                        <input type="text"placeholder="公司名稱" class="input-text">
+                    </div>
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            電子郵件<sup>*</sup>
+                        </label>
+                        <input type="text"placeholder="電子郵件" class="input-text">
+                        <p>將以電子郵件通知，請務必填寫常用電子郵件。</p>
+                    </div>
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            統一編號<sup>*</sup>
+                        </label>
+                        <input type="text"placeholder="統一編號" class="input-text">
+                    </div>
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            手機號碼<sup>*</sup>
+                        </label>
+                        <input type="text"placeholder="手機號碼" class="input-text">
+                        <p>將以號碼致電聯繫或簡訊通知，請務必填寫常用號碼。</p>
+                    </div>
+                    <div class="list-item">
+                        <label for="" class="label-text">
+                            申請號碼筆數（最少需購買 3 個月以上）<sup>*</sup>
+                        </label>
+                        <select name="申請號碼筆數" id="">
+                            <option value="">1-10筆</option>
+                            <option value="">11-50筆</option>
+                            <option value="">50筆以上</option>
+                        </select>
+                    </div>
+                    <ul class="apply-text">
+                        <li>▶ 送出申請後將會透過電子郵件/手機號碼與您聯繫及報價，麻煩您留意。</li>
+                        <li>▶ 認證號碼顯示仍適用 Whoscall 使用者回報規範，詳情請參閱 服務條款。</li>
+                    </ul>
+                </div>
+                <button class="btn-apply">
+                    確認送出
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-link">
+                <div class="col">
+                    <h3>Whoscall</h3>
+                    <ul class="link-list">
+                        <li>
+                            <a href="#">認識 Whoscall</a>
+                        </li>
+                        <li>
+                            <a href="#">Whoscall 進階版</a>
+                        </li>
+                        <li>
+                            <a href="#">Whoscall 專欄</a>
+                        </li>
+                        <li>
+                            <a href="#">Whoscall 認證號碼</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>公司</h3>
+                    <ul class="link-list">
+                        <li>
+                            <a href="#">工作機會</a>
+                        </li>
+                    </ul>
+                    <h3>媒體中心</h3>
+                    <ul class="link-list">
+                        <li>
+                            <a href="#">最新消息</a>
+                        </li>
+                        <li>
+                            <a href="#">品牌識別</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>客戶服務</h3>
+                    <ul class="link-list">
+                        <li>
+                            <a href="#">安全性</a>
+                        </li>
+                        <li>
+                            <a href="#">常見問題</a>
+                        </li>
+                        <li>
+                            <a href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <div class="follow-us">
+                    <p>追蹤我們</p>
+                    <ul class="icon-list">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="power-by">
+                    <img src="/Day2HW-Whocall/whoscallimg/powerbygogolook.png" alt="gogolook">
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="text">
+                <p>© 2022 Gogolook. All Rights Reserved.</p>
+                <a href="#">服務條款</a>
+                <a href="#">隱私權政策</a>
+            </div>
+            <div class="language">
+                <a href="#"><i class="fa-solid fa-globe"></i></a></i>
+                <select name="language" >
+                    <option value="">English</option>
+                    <option value="">中文</option>
+                    <option value="">日本語</option>
+                    <option value="">ภาษาไทย</option>
+                    <option value="">Bahasa Melayu</option>
+                    <option value="">馬來西亞 (中文)</option>
+                    <option value="">한국어</option>
+                    <option value="">Português brasileiro</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+</body>
+</html>
