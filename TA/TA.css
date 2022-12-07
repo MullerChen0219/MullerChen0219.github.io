@@ -1,0 +1,36 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.content{
+    height: 1600px;
+}
+section:nth-of-type(odd) .content {background-color: #ff000050;}
+section:nth-of-type(even) .content {background-color: #00ff0050;}
+
+list{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: #00ffff50;
+}
+
+
+.list ul{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.list li{
+    margin: 0 20px;
+}
+
+
+
+
+

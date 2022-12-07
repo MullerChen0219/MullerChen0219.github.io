@@ -13,8 +13,61 @@
             list-style: none;
             font-family: 'Noto Sans TC', sans-serif;
         }
+        html{
+            scroll-behavior: smooth;
+        }
         .high-light{
             background: linear-gradient(180deg,transparent 0,transparent 50%,rgba(151,245,151,.5) 0,rgba(151,245,151,.5));
+        }
+        .fullpage{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: #2a2a2a50;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .qr-code{
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            padding: 60px;
+            position: relative;
+        }
+        .qr-code-text{
+            display: flex;
+            justify-content: center;
+        }
+        .qr-code{
+            font-size: 24px;
+        }
+        .qr-code span{
+            color: #00C300;
+        }
+
+        .qr-code img{
+            width: 100%;
+        }
+
+        #light-box{
+            display: none;
+        }
+        #light-box:checked ~ .fullpage{
+            display: flex;
+        }
+        .close{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background-color: #fff;
+            text-align: center;
+            line-height: 50px;
         }
         .main-header{
             width: 100%;
@@ -23,8 +76,8 @@
             background-color: #fff;
             box-shadow: 10px 1px 1px #ccc;
             position: fixed;
-            z-index: 1;
-            margin-bottom: 90px;
+            top: 0;
+            z-index: 3;
         }
         .header-content{
             width: 960px;
@@ -59,12 +112,13 @@
         }
         .btn-download{
             width: 150px;
-            padding: 10px 35px;
+            padding: 10px 0;
             color: #fff;
             font-size: 16px;
             background-color: #00C300;
             border: none;
             border-radius: 100px;
+            text-align: center;
         }
         .btn-download:hover{
             background-color: rgb(47, 239, 47);
@@ -76,7 +130,6 @@
             background-image: url(https://d3qzy1rn79qj7v.cloudfront.net/hero_images/valid-number-1440.jpg);
             background-size: cover;
             background-position: center center;
-            padding-top: 90px;
         }
         .banner-content{
             width: 960px;
@@ -119,6 +172,7 @@
         }
         .corner{
             height: 300px;
+            margin-top: 90px;
         }
             
         
@@ -464,12 +518,25 @@
                 <a href="#">Whoscall 專欄</a>
                 <a href="#">常見問題</a>
             </nav>
-            <button class="btn-download">
+            <label for="light-box" class="btn-download">
                 免費下載
-            </button>
+            </label>
         </div>
     </header>
     <main>
+        <section class="section-qrcode">
+            <input type="checkbox" id="light-box">
+            <div class="fullpage">
+                <div class="qr-code">
+                    <label for="light-box" class="close">X</label>
+                    <img src="/Day2HW-Whocall/whoscallimg/download-qrcode-260.png" alt="">
+                    <div class="qr-code-text">
+                        <p>掃描下載</p>
+                        <span>Whoscall</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section-banner">
             <div class="banner">
                 <div class="corner">
@@ -481,7 +548,7 @@
                     </div>
                     <h2>電話接通前<br>
                     讓專業形象為你開場！</h2>
-                    <a href="#">立即申請</a>
+                    <a href="#apply">立即申請</a>
                     <span>企業方案優惠 $200/月 起</span>
                 </div>
                 <div class="corner">
@@ -612,7 +679,7 @@
         </section>
         <section class="section-form">
             <form action="" class="form">
-                <h3>填寫申請人資料</h3>
+                <h3 id="apply">填寫申請人資料</h3>
                 <div class="form-list">
                     <div class="list-item">
                         <label for="" class="label-text">
