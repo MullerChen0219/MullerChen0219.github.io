@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYOTA HOMEWORK</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+        
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .wrap{
+            width: 960px;
+            margin: auto;
+            padding: 100px 0;;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .feature{
+            width: 350px;
+            position: absolute;
+            z-index: 3;
+        }
+        .wrap:nth-child(even) .feature{
+            right: 0px;
+        }
+        .feature .feature-title{
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+            background-color: #bb0404;
+            color: #fff;
+        }
+        .wrap:nth-child(even) .feature .feature-title{
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+        .feature .feature-title h2{
+            font-size: 52px;
+        }
+        .feature .feature-title .mark{
+            font-size: 100px;
+        }
+        .feature-title-number{
+            transform: rotate(90deg);
+        }
+        .feature-title-text{
+            display: flex;
+            align-items: center;
+        }
+        .feature-content{
+            background-color: #000;
+            color: #fff;
+        }
+        .feature-content h3{
+            font-size: 24px;
+            padding: 10px 10px 0px;
+        }
+        .feature-content p{
+            font-size: 18px;
+            line-height: 2;
+            padding: 10px;
+        }
+        .main-pic{
+            width: 680px;
+            position: relative;
+            padding-left: 200px;
+            padding-top: 145px;
+            z-index: 2;
+        }
+        .wrap:nth-child(even) .main-pic{
+            width: 680px;
+            position: relative;
+            z-index: 2;
+            padding-top: 145px;
+            padding-left: 0;
+        }
+        .main-pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-pic .play{
+            width: 42px;
+            height: 30px;
+            position: absolute;
+            top: 340px;
+            right: -8px;
+        }
+        .wrap:nth-child(even) .main-pic .play{
+            left: -8px;
+        }
+        .main-pic .play img{
+            width: 100%;
+            vertical-align: middle;
+            z-index: 3;
+        }
+        .gray{
+            width: 440px;
+            height: 290px;
+            background-color: #F2F2F2;
+            position: absolute;
+            top: 145px;
+            right: 0px;
+            z-index: 1;
+        }
+        .wrap:nth-child(even) .gray{
+            right: 200px;
+            top: 180px;
+        }
+        .revolution{
+            width: 640px;
+            background-color: #F2F2F2;
+            padding: 20px;
+            position: relative;
+            top: -50px;
+            z-index: 3;
+        }
+        .wrap:nth-child(even) .revolution{
+            left: 200px;
+        }
+        .revolution .design{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .revolution span{
+            color: #bb0404;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .revolution hr{
+            display: inline-block;
+            width: 420px;
+            height: 2px;
+            border: none;
+            background-color: #bb0404;
+            padding-left: 5px;
+        }
+        .revolution-text{
+            padding-top: 5px;
+        }
+        .revolution-text h3{
+            font-size: 18px;
+            padding: 3px 5px;
+            margin: 3px 0;
+            color: #fff;
+            background-color: #000;
+            width: fit-content;
+            font-weight: 500;
+        }
+        .revolution-text div{
+            display: flex;
+        }
+        .revolution-text .dot{
+            color: #bb0404;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <section class="wrap">
+            <section class="feature">
+                <div class="feature-title">
+                    <div class="feature-title-number">
+                        <h2 class="mark">01</h2>
+                    </div>
+                    <div class="feature-title-text">
+                        <h2>操控樂趣</h2>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>人人滿意的駕駛體驗</h3>
+                    <p>透過最佳重量分配，實現平順起
+                    步、直線穩定加速，過彎同時保持車身平穩帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。</p>
+                </div>
+            </section>
+            <div class="gray"></div>
+            <section class="main-pic">
+                <img src="/Day4HW-TOYOTA/toyota1.jpg" alt="">
+                <div class="play">
+                    <img src="/Day4HW-TOYOTA/play.png" alt="">
+                </div>
+            </section>
+            <section class="revolution">
+                <div class="design"><span>因為我們做了這些革新</span><hr>
+                </div>
+                <div class="revolution-text">
+                    <h3>低重心設計</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</p>
+                    </div>
+                    <h3>車體剛性強化</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕駛穩定性及安全性。</p>
+                    </div>
+                    <h3>四輪獨立懸吊</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>搭載全新四輪獨立懸吊設定，透過懸吊的高乘載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕駛樂趣。</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="wrap">
+            <section class="feature">
+                <div class="feature-title">
+                    <div class="feature-title-number">
+                        <h2 class="mark">02</h2>
+                    </div>
+                    <div class="feature-title-text">
+                        <h2>安全守護</h2>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>行車更安心的高剛性車體</h3>
+                    <p>您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程、毫無後顧之憂。</p>
+                </div>
+            </section>
+            <div class="gray"></div>
+            <section class="main-pic">
+                <img src="/Day4HW-TOYOTA/toyota2.jpg" alt="">
+                <div class="play">
+                    <img src="/Day4HW-TOYOTA/play.png" alt="">
+                </div>
+            </section>
+            <section class="revolution">
+                <div class="design"><span>因為我們做了這些革新</span><hr>
+                </div>
+                <div class="revolution-text">
+                    <h3>主動安全</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>以先進的TSS 系統，動偵測路況，輔助駕駛判斷路況並維持行車安全。</p>
+                    </div>
+                    <h3>被動安全</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>堅固的高剛性車體，使用熱沖壓材料的高強度抗扭鋼，強化座對意外事故的保力。</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="wrap">
+            <section class="feature">
+                <div class="feature-title">
+                    <div class="feature-title-number">
+                        <h2 class="mark">03</h2>
+                    </div>
+                    <div class="feature-title-text">
+                        <h2>乘坐舒適</h2>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>令人放鬆舒適的車室空間</h3>
+                    <p>車室空間設計著重人體工學，透過方向盤、踏板等位置優化，追求更舒適的駕駛位置，並以新型座椅設計，提高座椅包覆性，致力實現長途駕駛不疲勞的舒適駕馭體驗。</p>
+                </div>
+            </section>
+            <div class="gray"></div>
+            <section class="main-pic">
+                <img src="/Day4HW-TOYOTA/toyota3.jpg" alt="">
+                <div class="play">
+                    <img src="/Day4HW-TOYOTA/play.png" alt="">
+                </div>
+            </section>
+            <section class="revolution">
+                <div class="design"><span>因為我們做了這些革新</span><hr>
+                </div>
+                <div class="revolution-text">
+                    <h3>駕駛位置最佳化</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>針對駕駛位置進行徹底的修改，讓駕駛者可如同握手般自然且舒適地操控方向盤。</p>
+                    </div>
+                    <h3>駕駛視野佳</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>考量駕駛坐進車內的高度，透過前擋風玻璃位置的調整，達到盲區極小化，使駕駛視野更開闊，同步提升駕駛安全。</p>
+                    </div>
+                    <h3>更寧靜的車室</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>採用最新三層結構的隔音材料，與引擎、變速箱的零件改革，將座艙的震動抑制在最小限度，提供乘客舒適安靜的享受。</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="wrap">
+            <section class="feature">
+                <div class="feature-title">
+                    <div class="feature-title-number">
+                        <h2 class="mark">04</h2>
+                    </div>
+                    <div class="feature-title-text">
+                        <h2>以人為本</h2>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>使用者導向的貼心設計</h3>
+                    <p>藉由高度人性化的介面整合、遞
+                    車輛資訊豐富日常駕駛體驗。
+                    從提升油耗表現到行李廂空間最適化，均細心考量，更加貼近使用者真正所需與習慣，並給予即時回應。</p>
+                </div>
+            </section>
+            <div class="gray"></div>
+            <section class="main-pic">
+                <img src="/Day4HW-TOYOTA/toyota4.jpg" alt="">
+                <div class="play">
+                    <img src="/Day4HW-TOYOTA/play.png" alt="">
+                </div>
+            </section>
+            <section class="revolution">
+                <div class="design"><span>因為我們做了這些革新</span><hr>
+                </div>
+                <div class="revolution-text">
+                    <h3>優異油耗表現</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>以 AURIS 為例，更強勁的高速引擎將熱效率提升至 40%，達到世界級水準，屢屢突破燃油效率新境界。</p>
+                    </div>
+                    <h3>行李箱空間最適化</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>以 PRIUS 為例，透過將電池位置移到後座下方，讓行李箱擁有更大的空間。</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="wrap">
+            <section class="feature">
+                <div class="feature-title">
+                    <div class="feature-title-number">
+                        <h2 class="mark">05</h2>
+                    </div>
+                    <div class="feature-title-text">
+                        <h2>引以為傲</h2>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>極具吸引力的精心設計</h3>
+                    <p>TNGA 車款擁有讓人忍不住回頭的新潮外觀、讓駕駛充滿自信的駕馭快感!不僅讓車主能展現個人風格，也能讓擁有者都能引以為傲。</p>
+                </div>
+            </section>
+            <div class="gray"></div>
+            <section class="main-pic">
+                <img src="/Day4HW-TOYOTA/toyota5.jpg" alt="">
+                <div class="play">
+                    <img src="/Day4HW-TOYOTA/play.png" alt="">
+                </div>
+            </section>
+            <section class="revolution">
+                <div class="design"><span>因為我們做了這些革新</span><hr>
+                </div>
+                <div class="revolution-text">
+                    <h3>設計概念</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>TNGA 低重心設計，不僅呈現更低伏的運動化外觀，更講高品質內裝的一致性。</p>
+                    </div>
+                    <h3>環保概念</h3>
+                    <div>
+                        <p class="dot">•</p>
+                        <p>為了對環境保護盡一份心力，我們全面提升傳統引擎、變速箱與油電複合動力的動力效能。</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+
+</body>
+</html>

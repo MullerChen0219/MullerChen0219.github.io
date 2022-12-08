@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.section-ultimatePW{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.ultimatePW{
+    width: 500px;
+    height: 450px;
+    margin: auto;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-45deg, #a6d8f9, #3ea7ed);
+    border-radius: 20px;
+}
+.input-zone{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.input-zone .numGuess{
+    width: 400px;
+    padding: 20px 0;
+    border-radius: 20px;
+    border: none;
+}
+.hint-zone{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    margin: 10px;
+    padding: 10px;
+}
+.hint-zone button{
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 6px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 50px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1570cd;
+}
+.hint-zone .display,span{
+    display: block;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 50px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+.button-zone{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.btn1-6{
+    display: flex;
+}
+.number-btn{
+    width: 100px;
+    height: 50px;
+    margin: 5px 0;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 6px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1570cd;
+}
+.number-btn:hover{
+    background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color: #1e62d0;
+}
+.number-btn:active{
+    position: relative;
+    top: 1px;
+}
+.guess-btn{
+    width: 90px;
+    height: 110px;
+    margin: 5px 0;
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 6px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+.guess-btn:hover{
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color: #ffab23;
+}
+.guess-btn:active{
+    position: relative;
+    top: 1px;
+}
+.newGame-btn{
+    width: 90px;
+    height: 110px;
+    margin: 5px 0;
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 6px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+.newGame-btn:hover{
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color: #ffab23;
+}
+.newGame-btn:active{
+    position: relative;
+    top: 1px;
+}
+.clear-btn{
+    width: 205px;
+    height: 50px;
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 6px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+.clear-btn:hover{
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color: #ffab23;
+}
+.clear-btn:active{
+    position: relative;
+    top: 1px;
+}
