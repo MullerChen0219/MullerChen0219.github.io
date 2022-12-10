@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heart for HP test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #hpZone{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .heart{
+            width: 50px;
+            height: 50px;
+            margin: 20px 0;
+            position: relative;
+            transform: rotate(45deg);
+            background-color: #fa0404;
+        }
+        .heart:before,.heart:after{
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: -25px;
+            background-color: #fa0404;
+        }
+        .heart:after{
+            left: 0;
+            top: -25px;
+            background-color: #fa0404;
+        }
+        .blackHeart{
+            width: 50px;
+            height: 50px;
+            margin: 20px 0;
+            position: relative;
+            transform: rotate(45deg);
+            background-color: #000;
+        }
+        .blackHeart:before,.blackHeart:after{
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: -25px;
+            background-color: #000;
+        }
+        .blackHeart:after{
+            left: 0;
+            top: -25px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul id="hpZone">
+        <li class="heart"></li>
+        <li class="heart"></li>
+        <li class="heart"></li>
+        <li class="heart"></li>
+        <li class="heart"></li>
+    </ul>
+
+    <button class="removeHeart">移除愛心</button>
+    <button class="recoverHeart">復原愛心</button>
+
+    
+    <script>
+        let hpZone = document.getElementById('hpZone');
+        let oldHeart = document.querySelectorAll('.heart');
+        let removeHeart = document.querySelector('.removeHeart')
+        let recoverHeart = document.querySelector('.recoverHeart')
+        
+            removeHeart.addEventListener('click', function(){
+            hpZone.removeChild(hpZone.lastElementChild)
+            if (hpZone.childElementCount == 0){
+                alert('你輸了')
+            }
+        })
+
+            recoverHeart.addEventListener('click', function(){
+                hpZone.insertBefore(hpZone.lastElementChild,hpZone.firstElementChild)
+            })
+    </script>
+</body>
+</html>
