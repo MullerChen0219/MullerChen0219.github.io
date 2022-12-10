@@ -15,6 +15,96 @@
             list-style: none;
             font-family: 'Noto Sans TC', sans-serif;
         }
+        .main-header{
+            width: 100%;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            z-index: 5;
+            border-bottom: 3.5px solid #000;
+        }
+        .header-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0 20px 15px;
+        }
+        .header-content a{
+            text-decoration: none;
+        }
+        .header-content .main-logo h1{
+            text-decoration: none;
+            color: transparent;
+            width: 150px;
+            background-image: url(/Day4HW-TOYOTA/logo.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+        }
+        .header-content .social-link{
+            padding: 10px 0;
+        }
+        .header-content .social-link a{
+            padding: 8px 15px;
+        }
+        .header-content .social-link a img{
+            vertical-align: middle;
+        }
+        .advantage{
+            width: 100%;
+            background-color: #fff;
+            padding-top: 150px;
+        }
+        .advantage-content{
+            width: 960px;
+            margin: auto;
+        }
+        .advantage-content-title{
+            text-align: center;
+        }
+        .advantage-content-title h2{
+            font-size: 42px;
+            color: #333;
+        }
+        .advantage-content-title hr{
+            width: 45px;
+            height: 5px;
+            margin: auto;
+            background-color: #000;
+            border: none;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        .advantage-content-item{
+            display: flex;
+            text-align: center;
+        }
+        .advantage-content-item li{
+            width: 172px;
+            margin: 0 10px;
+            padding: 3px 0;
+            border-top: 1px dotted black;
+            border-left: 1px dotted black;
+            border-right: 1px dotted black;
+            border-bottom: 3px solid #bb0404;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .advantage-content-item li::before{
+            content: '';
+            position: absolute;
+            background-color: #bb0404;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        .advantage-content-item li a{
+            text-decoration: none;
+            color: #333;
+        }
         .wrap{
             width: 960px;
             margin: auto;
@@ -164,11 +254,78 @@
         .revolution-text .dot{
             color: #bb0404;
         }
+        .main-footer{
+            width: 100%;
+            background-color: #333333;
+        }
+        .footer-content{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        .footer-content p{
+            color: #fff;
+        }
+        .footer-content a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .footer-suggestion{
+            text-align: center;
+            font-size: 10px;
+            padding-bottom: 20px;
+            margin-top: 10px;
+        }
+        .footer-suggestion p{
+            color: #727779;
+        }
     </style>
 </head>
 <body>
-    
+    <header class="main-header">
+        <div class="header-content">
+            <div class="main-logo">
+                <a href="#">
+                    <h1>TOYOTA</h1>
+                </a>
+            </div>
+            <div class="social-link">
+                <a href="#">
+                    <img src="/Day4HW-TOYOTA/Racing.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="/Day4HW-TOYOTA/fb.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="/Day4HW-TOYOTA/ig.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="/Day4HW-TOYOTA/yt.png" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
     <main>
+        <section class="advantage">
+            <div class="advantage-content">
+                <div class="advantage-content-title">
+                    <h2>五大優勢</h2>
+                    <hr>
+                </div>
+                <ul class="advantage-content-item">
+                    <li><a href="#">操控樂趣</a></li>
+                    <li><a href="#">安全守護</a></li>
+                    <li><a href="#">乘坐舒適</a></li>
+                    <li><a href="#">以人為本</a></li>
+                    <li><a href="#">引以為傲</a></li>
+                </ul>
+            </div>
+        </section>
         <section class="wrap">
             <section class="feature">
                 <div class="feature-title">
@@ -378,6 +535,20 @@
             </section>
         </section>
     </main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <img src="/Day4HW-TOYOTA/footer.png" alt="">
+            <p>© HOTAI MOTOR CO., LTD. 和泰汽車股份有限公司</p>
+            <a href="#">常見問題</a>
+            <a href="#">聯絡我們</a>
+            <a href="#">隱私權說明</a>
+            <a href="#">版權聲明</a>
+            <p>客服專線 0800221345、(02)5599-7299</p>
+        </div>
+        <div class="footer-suggestion">
+            <p>建議使用 IE11 以上，或 chrome 瀏覽器，以達最佳瀏覽效果。</p>
+        </div>
+    </footer>
 
 
 </body>
