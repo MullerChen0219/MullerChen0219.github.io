@@ -12,7 +12,7 @@ html{
 section:nth-of-type(odd) .content {background-color: #ff000050;}
 section:nth-of-type(even) .content {background-color: #00ff0050;}
 
-list{
+.list{
     width: 100%;
     height: 60px;
     position: fixed;

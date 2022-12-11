@@ -55,6 +55,7 @@
             width: 100%;
             background-color: #fff;
             padding-top: 150px;
+            margin-bottom: 90px;
         }
         .advantage-content{
             width: 960px;
@@ -94,6 +95,10 @@
             padding: 5px 50px;
             border-bottom: 2px solid #bb0404;
             position: relative;
+            z-index: 1;
+        }
+        .advantage-content-item a:hover{
+            color: #fff;
         }
         .advantage-content-item a::before{
             content: '';
@@ -123,8 +128,9 @@
             position: absolute;
             z-index: 3;
             padding-top: 90px;
+            margin-top: -90px;
         }
-        .wrap:nth-child(even) .feature{
+        .wrap:nth-child(odd) .feature{
             right: 0px;
         }
         .feature .feature-title{
@@ -134,7 +140,7 @@
             background-color: #bb0404;
             color: #fff;
         }
-        .wrap:nth-child(even) .feature .feature-title{
+        .wrap:nth-child(odd) .feature .feature-title{
             flex-direction: row-reverse;
             justify-content: space-evenly;
         }
@@ -172,7 +178,7 @@
             padding-top: 123px;
             z-index: 2;
         }
-        .wrap:nth-child(even) .main-pic{
+        .wrap:nth-child(odd) .main-pic{
             padding-left: 0;
         }
         .main-pic img{
@@ -186,7 +192,7 @@
             top: 340px;
             right: -8px;
         }
-        .wrap:nth-child(even) .main-pic .play{
+        .wrap:nth-child(odd) .main-pic .play{
             left: -8px;
         }
         .main-pic .play img{
@@ -203,7 +209,7 @@
             right: 0px;
             z-index: 1;
         }
-        .wrap:nth-child(even) .gray{
+        .wrap:nth-child(odd) .gray{
             height: 350px;
             right: 200px;
             top: 160px;
@@ -216,7 +222,7 @@
             top: -50px;
             z-index: 3;
         }
-        .wrap:nth-child(even) .revolution{
+        .wrap:nth-child(odd) .revolution{
             left: 200px;
         }
         .revolution .design{
