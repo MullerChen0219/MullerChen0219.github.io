@@ -1,25 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-body{
+
+body {
     display: flex;
     background: linear-gradient(-45deg, #249beb, #045082);
-    height: 100%;
     align-items: center;
 }
-h1{
+
+h1 {
     font-size: 36px;
     color: #2c2c2c90;
 }
-.section-ultimatePW{
+
+.section-ultimatePW {
     width: 100%;
     display: flex;
     align-items: center;
     padding: 100px;
 }
-.ultimatePW{
+
+.ultimatePW {
     width: 500px;
     height: 550px;
     margin: auto;
@@ -31,12 +34,14 @@ h1{
     border-radius: 20px;
     box-shadow: 10px #333333;
 }
-.input-zone{
+
+.input-zone {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.input-zone .numGuess{
+
+.input-zone .numGuess {
     width: 400px;
     padding: 20px 0;
     border-radius: 20px;
@@ -44,7 +49,8 @@ h1{
     font-size: 32px;
     text-align: center;
 }
-.hint-zone{
+
+.hint-zone {
     width: 400px;
     display: flex;
     justify-content: space-between;
@@ -53,7 +59,8 @@ h1{
     margin: 10px;
     padding: 10px;
 }
-.hint-zone button{
+
+.hint-zone button {
     box-shadow: inset 0px 1px 0px 0px #97c4fe;
     background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
     background-color: #3d94f6;
@@ -69,7 +76,8 @@ h1{
     text-decoration: none;
     text-shadow: 0px 1px 0px #1570cd;
 }
-.hint-zone .display{
+
+.hint-zone .display {
     display: block;
     background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
     border-radius: 6px;
@@ -85,17 +93,20 @@ h1{
     width: 250px;
     text-align: center;
 }
-.button-zone{
+
+.button-zone {
     width: 400px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     margin-top: 15px;
 }
-.btn1-6{
+
+.btn1-6 {
     display: flex;
 }
-.number-btn{
+
+.number-btn {
     width: 100px;
     height: 50px;
     margin: 5px 0;
@@ -114,15 +125,18 @@ h1{
     text-decoration: none;
     text-shadow: 0px 1px 0px #1570cd;
 }
-.number-btn:hover{
+
+.number-btn:hover {
     background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
     background-color: #1e62d0;
 }
-.number-btn:active{
+
+.number-btn:active {
     position: relative;
     top: 1px;
 }
-.guess-btn{
+
+.guess-btn {
     width: 90px;
     height: 110px;
     margin: 5px 0;
@@ -141,15 +155,18 @@ h1{
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffee66;
 }
-.guess-btn:hover{
+
+.guess-btn:hover {
     background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
     background-color: #ffab23;
 }
-.guess-btn:active{
+
+.guess-btn:active {
     position: relative;
     top: 1px;
 }
-.newGame-btn{
+
+.newGame-btn {
     width: 90px;
     height: 110px;
     margin: 5px 0;
@@ -168,15 +185,18 @@ h1{
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffee66;
 }
-.newGame-btn:hover{
+
+.newGame-btn:hover {
     background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
     background-color: #ffab23;
 }
-.newGame-btn:active{
+
+.newGame-btn:active {
     position: relative;
     top: 1px;
 }
-.clear-btn{
+
+.clear-btn {
     width: 205px;
     height: 50px;
     box-shadow: inset 0px 1px 0px 0px #fff6af;
@@ -196,16 +216,18 @@ h1{
     position: relative;
     top: -1.5px;
 }
-.clear-btn:hover{
+
+.clear-btn:hover {
     background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
     background-color: #ffab23;
 }
-.clear-btn:active{
+
+.clear-btn:active {
     position: relative;
     top: 1px;
 }
 
-.checkAnswer{
+.checkAnswer {
     box-shadow: inset 0px 1px 0px 0px #fff6af;
     background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
     background-color: #ffec64;
@@ -221,20 +243,24 @@ h1{
     text-decoration: none;
     text-shadow: 0px 1px 0px #837405;
 }
-.warning-zone{
+
+.warning-zone {
     height: 30px;
 }
-.warning{
+
+.warning {
     font-size: 24px;
     font-weight: 700;
     color: rgba(249, 122, 3, 0.881);
 }
+
 .HP {
     width: 100%;
     height: 20vh;
     text-align: center;
     color: #2c2c2c90;
 }
+
 #hpZone {
     width: 400px;
     height: 100px;

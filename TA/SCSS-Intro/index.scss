@@ -1,0 +1,85 @@
+@import 'variables';
+
+// nesting 巢狀
+div{
+    p{
+        color:#ddd;
+        font-size: 20px;
+    }
+    background-color: black;
+    height: 100px;
+    width: 100px;
+}
+
+// variable 變數
+$main-color: blue;
+
+.main{
+    background-color: $main-color;
+}
+
+//mixin 宣告
+@mixin Square($width, $height, $color) {
+    width: $width;
+    height: $height;
+    color: $color;
+    border-right: 1px solid #000;
+    // background-color: #fff;
+    // font-size: 30px;
+    
+}
+//使用
+.square1{
+    @include Square(40px, 50px, blue);
+}
+.square2{
+    @include Square(30px, 40px, red);
+}
+//extend
+
+%btn {
+    color: red;
+    margin: 30px;
+    height: 30px;
+    width: 20px;
+}
+
+.btn1 {
+    @extend %btn;
+    padding: 5px;
+}
+
+.btn2 {
+    @extend %btn;
+    padding: 10px;
+}
+//parent references
+
+//scss
+li {
+    display: flex;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & > a {
+        flex: 0 0 50px;
+        margin-right: 10px;
+    }
+}
+
+//css
+li {
+    display: flex;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+//partials & import(module)
+
+.primary {
+    color: $primary;
+}

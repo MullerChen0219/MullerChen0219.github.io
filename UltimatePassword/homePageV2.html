@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html1 lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼首頁</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(69, 130, 205);
+            margin: 0 auto;
+        }
+        .title{
+            text-align: center;
+            margin-bottom: 30px;
+            background: url(/UltimatePassword/h1.png) no-repeat center/ cover;
+        }
+        .title h1{
+            font-size: 48px;
+            padding: 48px 0;
+            display: block;
+            position: relative;
+            top: 10px;
+            color: rgba(83, 109, 201, 0.762);
+        }
+        .wrap{
+            max-width: 1200px;
+            display: flex;
+            margin: auto;
+        }
+        .item{
+            width: 568px;
+            margin: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #fff;
+            transform: translateY(0px);
+            transition: .3s;
+        }
+        .item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item h2{
+            border-bottom: 1px solid #888;
+            padding-bottom: .3em;
+            margin-bottom: .4em;
+            font-weight: 900;
+        }
+        .item p{
+            line-height: 1.6;
+            font-weight: 500;
+            font-size: 24px;
+        }
+        .item .text{
+            padding: 15px;
+            position: relative;
+        }
+        .item .text::before{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+            border-top: 100px solid transparent;
+            border-left: 284px solid #fff;
+            border-right: 284px solid #fff;
+            transform: translateY(-100%);
+        }
+        .item:hover{
+            transform: translateY(25px);
+        }
+        .item:hover .text{
+            background-image: linear-gradient(0deg,#FB8076, #FEB85D);
+        }
+        .item:hover .text::before{
+            border-left: 284px solid #FEB85D;
+            border-right: 284px solid #FEB85D;            
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>終極密碼</h1>
+    </div>
+    <div class="wrap">
+        <div class="item">
+            <a href="/UltimatePassword/UltimatePasswordV2.0.html"><img src="/UltimatePassword/normal.jpg" alt=""></a>
+            <div class="text">
+                <h2>一般版</h2>
+                <p>猜0~100數字，猜到對為止</p>
+            </div>            
+        </div>
+        <div class="item">
+            <a href="/UltimatePassword/UltimatePasswordV3.0.html"><img src="/UltimatePassword/adv.jpg" alt=""></a>
+            <div class="text">
+                <h2>進階版</h2>
+                <p>猜0~100數字，只能猜5次</p>
+            </div>            
+        </div>
+
+    </div>
+</body>
+</html1

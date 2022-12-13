@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼首頁</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body{
+            padding: 50px 0;
+        }
+        .wrap{
+            width: 1200px;
+            margin: auto;
+        }
+        .title{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .title h1{
+            font-size: 52px;
+            color: #fa0;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+        .item .gameMode-pic{
+            width: 55%;
+        }
+        .item .gameMode-pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item .gameMode-text{
+            width: 55%;
+            flex-shrink: 0;
+            padding: 30px 30px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+            color: rgb(44, 90, 150,.9);
+        }
+        .item .gameMode-text h2{
+            font-size: 48px;
+        }
+        .item .gameMode-text p{
+            font-size: 36px;
+        }
+        .item > :first-child{
+            margin-right: -10%;
+        }
+        .item:nth-child(3) .gameMode-text{
+            background-color: #2A4C65;
+        }
+        .item:nth-child(2) .gameMode-text{
+            background-color: #66828E;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <h1>終極密碼</h1>
+        </div>
+        <div class="item">
+            <div class="gameMode-pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="gameMode-text">
+                <h2>一般版</h2>
+                <p>猜0~100數字</p>
+            </div>            
+        </div>
+        <div class="item">
+            <div class="gameMode-text">
+                <h2>進階版</h2>
+                <p>猜0~200數字，限定只能猜5次</p>
+            </div>              
+            <div class="gameMode-pic">
+                <img src="https://picsum.photos/300/200/?random=11">
+            </div>          
+        </div>
+    </div>
+</body>
+</html>
