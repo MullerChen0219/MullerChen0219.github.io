@@ -1,0 +1,212 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+#menu-control {
+    display: none;
+}
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #28353B;
+}
+.main-logo{
+    width: 100px;
+    height: 75px;
+}
+.main-logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+.main-nav .nav-list{
+    display: flex;
+}
+.main-nav .nav-list a{
+    text-decoration: none;
+    color: #ccc;
+    padding: 28px 24.5px;
+    font-size: 20px;
+    display: block;
+}
+
+.nav-list li:hover > a{
+    background-color: #a8aeb170;
+}
+.nav-list i{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.nav-list .drop-list li a{
+    font-size: 17px;
+}
+.drop-list .drop-list-control {
+    position: relative;
+}
+.drop-list .drop-list-control ~ li{
+    border-top: 1px solid #ccc;
+}
+.drop-list .drop-list-control li + li{
+    border-top: 1px solid #ccc;
+}
+.drop-list > li {
+    border-top: 1px solid #ccc;
+}
+.sub-drop-list{
+    background-color: rgb(59, 109, 138);
+}
+.drop-list-control .sub-drop-list li a{
+    font-size: 15px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+}
+@media screen and (width < 768px) {
+.wrap{
+    background-color: #28353B;
+    height: 100vh;
+}
+.main-header{
+    border-bottom: 2px solid #ccc;
+}
+.HB {
+    width: 40px;
+    height: 40px;
+    background-color: #28353B;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 10px;
+    }
+
+.HB span {
+    width: 80%;
+    height: 2px;
+    background-color: #fff;
+    }
+
+.main-nav {
+    position: absolute;
+    background-color: #28353B;
+    width: 100%;
+    top: 100%;
+    left: -100%;
+    opacity: 0;
+    transition: 1s;
+}
+#menu-control:checked ~ .wrap .main-header .main-nav {
+    left: 0;
+    opacity: 1;
+}
+#menu-control:checked ~ .wrap .main-header .HB span:first-child{
+    display: none;
+}
+#menu-control:checked ~ .wrap .main-header .HB span:nth-child(2){
+    transform: rotate(45deg) translate(30%);
+    transition: .5s ease-out;
+}
+#menu-control:checked ~ .wrap .main-header .HB span:nth-child(3){
+    transform: rotate(-45deg) translate(30%);
+    transition: .5s ease-out;
+}
+
+.main-nav a {
+    display: block;
+    width: 100%;
+    /* border-bottom: 1px solid #ccc; */
+}
+.arrow-down,.sub-arrow-down{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.arrow-down,.sub-arrow-down .fa-chevron-down{
+    color: #ccc;
+}
+.nav-list{
+    flex-direction: column;
+}
+.nav-list li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list li:hover .drop-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.drop-list{
+    position: relative;
+    display: none;
+}
+.sub-drop-list{
+    display: none;
+}
+.sub-drop-list{
+    position: relative;
+}
+.drop-list .drop-list-control:hover .sub-drop-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+}
+
+
+@media screen and (width >=768px) {
+.wrap{
+    height: 100vh;
+    background-color: rgb(5, 56, 157);
+}
+.HB {
+    display: none;
+}
+.arrow-down .fa-chevron-down{
+    display: none;
+}
+.sub-arrow-down .fa-chevron-down{
+    display: none;
+}
+.nav-list li:hover .drop-list {
+    display: block;
+}
+
+.nav-list li {
+    position: relative;
+}
+.drop-list {
+    position: absolute;
+    display: none;
+    background-color: #28353B;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.drop-list .drop-list-control:hover .sub-drop-list {
+    display: block;
+}
+
+.sub-drop-list {
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 0;
+    width: 250px;
+    text-align: center;
+}
+}
+
