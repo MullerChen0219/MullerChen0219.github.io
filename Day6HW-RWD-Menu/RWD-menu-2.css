@@ -5,6 +5,7 @@
     list-style: none;
     line-height: 1;
     font-family: 'Noto Sans TC', sans-serif;
+    box-sizing: border-box;
 }
 #menu-control {
     display: none;
@@ -140,28 +141,30 @@
     justify-content: space-between;
     align-items: center;
 }
-.nav-list li:hover .drop-list {
+/* .nav-list li:hover .drop-list {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-}
+    
+} */
 .drop-list{
     position: relative;
     display: none;
+    width: 100%;
+    text-align: center;
 }
 .sub-drop-list{
     display: none;
 }
 .sub-drop-list{
     position: relative;
-}
-.drop-list .drop-list-control:hover .sub-drop-list {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     text-align: center;
 }
+/* .drop-list .drop-list-control:hover .sub-drop-list {
+    display: flex;
+    flex-direction: column;
+    
+} */
 
 }
 
