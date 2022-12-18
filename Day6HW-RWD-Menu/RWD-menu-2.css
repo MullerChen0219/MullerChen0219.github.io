@@ -35,8 +35,13 @@
     font-size: 20px;
     display: block;
 }
-
 .nav-list li:hover > a{
+    background-color: #a8aeb170;
+}
+.nav-list-control:hover .arrow-down {
+    background-color: #a8aeb170;
+}
+.drop-list-control:hover .sub-arrow-down {
     background-color: #a8aeb170;
 }
 .nav-list i{
@@ -165,7 +170,13 @@
     flex-direction: column;
     
 } */
+.nav-list-control:hover .arrow-down {
+    background-color: #a8aeb170;
+}
 
+.drop-list-control:hover .sub-arrow-down {
+    background-color: #a8aeb170;
+}
 }
 
 
