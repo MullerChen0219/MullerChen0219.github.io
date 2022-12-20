@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, #249beb, #045082);
+}
+
+h1 {
+    font-size: 52px;
+    width: 100%;
+    text-align: center;
+    margin: 50px auto;
+    color: #ffaa22;
+    font-weight: 900;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#container {
+    width: 80%;
+}
+
+#container img {
+    width: 100%;
+}
+
+#counterClockWise,
+#clockWise {
+    width: 60px;
+    height: 60px;
+    margin: 5px 0;
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 6px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+
+#colorPicker {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#blueGray,
+#black,
+#riverGray,
+#red,
+#white,
+#silver {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3.5px solid #fff;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#blueGray {
+    background-color: #75879D;
+}
+
+#black {
+    background-color: #292F2F;
+}
+
+#riverGray {
+    background-color: #7C8185;
+}
+
+#red {
+    background-color: #CB3330;
+}
+
+#white {
+    background-color: #E9EDF0;
+}
+
+#silver {
+    background-color: #C8CFD9;
+}

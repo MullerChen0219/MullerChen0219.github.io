@@ -5,89 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3DAltisHW</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        body{
-            background: linear-gradient(90deg, #249beb, #045082);
-        }
-        h1{
-            font-size: 52px;
-            width: 100%;
-            text-align: center;
-            margin: 50px auto;
-            color: #ffaa22;
-            font-weight: 900;
-        }
-        .wrap{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
-        #container{
-            width: 80%;
-        }
-        #container img{
-            width: 100%;
-        }
-        #counterClockWise,#clockWise{
-            width: 60px;
-            height: 60px;
-            margin: 5px 0;
-            box-shadow: inset 0px 1px 0px 0px #fff6af;
-            background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-            background-color: #ffec64;
-            border-radius: 6px;
-            border: 1px solid #ffaa22;
-            display: inline-block;
-            cursor: pointer;
-            color: #333333;
-            font-family: Arial;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 20px 12px;
-            text-decoration: none;
-            text-shadow: 0px 1px 0px #ffee66;
-        }
-        #colorPicker{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #blueGray,#black,#riverGray,#red,#white,#silver{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 3.5px solid #fff;
-            margin: 15px;
-        }
-        #blueGray{
-            background-color: #75879D;
-        }
-        #black{
-            background-color: #292F2F;
-        }
-        #riverGray{
-            background-color: #7C8185;
-        }
-        #red{
-            background-color: #CB3330;
-        }
-        #white{
-            background-color: #E9EDF0;
-        }
-        #silver{
-            background-color: #C8CFD9;
-        }
-    </style>
+    <link rel="stylesheet" href="3DAltisHW-Advanced.css">
 </head>
 <body>
     
@@ -111,7 +29,7 @@
 
 
     <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
-    <script>
+    <script src="3DAltisHW-Advanced.js">
         //預設車體顏色
         let carSrc;
         let carArray = [];
@@ -139,7 +57,7 @@
         
         img.setAttribute("src", carArray[index]);
         container.appendChild(img);
-
+        }
         //換色事件監聽
         _blueGray.addEventListener('click', function () {
             carArray = [];
@@ -147,6 +65,7 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_18_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
 
         _black.addEventListener('click', function () {
@@ -155,6 +74,7 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_19_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
 
         _riverGray.addEventListener('click', function () {
@@ -163,6 +83,7 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_20_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
 
         _red.addEventListener('click', function () {
@@ -171,6 +92,7 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_22_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
 
         _white.addEventListener('click', function () {
@@ -179,6 +101,7 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_23_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
 
         _silver.addEventListener('click', function () {
@@ -187,11 +110,12 @@
                 carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_21_${i}.png`;
                 carArray.push(carSrc);
             }
+            img.setAttribute("src", carArray[index]);
         })
         
 
 
-        //順時針、逆時針事件監聽
+        //順時針、逆時針事件監聽    
         counterClockWise.addEventListener('click', function () {
             if (index === 0) {
                 index = 59;
@@ -201,7 +125,7 @@
                 index--;
             }
             img.setAttribute("src", carArray[index]);
-            container.replaceChild(img);            
+            // container.replaceChild(img);            
         })
         
         clockWise.addEventListener('click', function () {
@@ -213,12 +137,51 @@
                 index++;
             }
             img.setAttribute("src", carArray[index]);
-            container.replaceChild(img);
-            
-
+            // container.replaceChild(img);
         })
-    }
+        
 
+        //連續按壓滑鼠監聽
+        let tid;
+        counterClockWise.addEventListener('mousedown', function () {
+            tid = setInterval(function(){
+            if (index === 0) {
+            index = 59;
+            }
+            else
+            {
+                index--;
+            }
+            img.setAttribute("src", carArray[index]);
+            },75);
+            });
+            counterClockWise.addEventListener('mouseup', function () {
+                clearInterval(tid);
+            })
+            counterClockWise.addEventListener('mouseout', function () {
+                clearInterval(tid);
+            }) 
+        
+        clockWise.addEventListener('mousedown', function () {
+            tid = setInterval(function(){
+            if (index === 59) {
+            index = 0;
+            }
+            else
+            {
+                index++;
+            }
+            img.setAttribute("src", carArray[index]);
+            },75);
+            });
+            clockWise.addEventListener('mouseup', function () {
+                clearInterval(tid);
+            })
+            clockWise.addEventListener('mouseout', function () {
+                clearInterval(tid);
+            }) 
+        
+        
 
     </script>
 </body>
