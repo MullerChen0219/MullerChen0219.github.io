@@ -2,7 +2,7 @@
 let carSrc;
 let carArray = [];
 for(i = 1; i < 61; i++) {
-    carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_18_${i}.png`;
+    carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_18_${i}.png`;
     carArray.push(carSrc);
 }
 let container = document.getElementById("container");
@@ -32,7 +32,7 @@ container.appendChild(img);
 _blueGray.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_18_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_18_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
@@ -41,7 +41,7 @@ _blueGray.addEventListener('click', function () {
 _black.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_19_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_19_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
@@ -50,7 +50,7 @@ _black.addEventListener('click', function () {
 _riverGray.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_20_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_20_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
@@ -59,7 +59,7 @@ _riverGray.addEventListener('click', function () {
 _red.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_22_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_22_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
@@ -68,7 +68,7 @@ _red.addEventListener('click', function () {
 _white.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_23_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_23_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
@@ -77,7 +77,7 @@ _white.addEventListener('click', function () {
 _silver.addEventListener('click', function () {
     carArray = [];
     for (i = 1; i < 61; i++) {
-        carSrc = `https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_21_${i}.png`;
+        carSrc = `/JSHW-TOYOTA_Altis3D/Altis/360EXT_1_21_${i}.png`;
         carArray.push(carSrc);
     }
     img.setAttribute("src", carArray[index]);
