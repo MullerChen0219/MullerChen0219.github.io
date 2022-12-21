@@ -2166,29 +2166,12 @@
         let heroArray = [];
         let container;
         let btnCreateHeroArray, btnListHero, btnTableHero;
+        let _result = document.querySelector("#result")
         let card = document.querySelectorAll(".card");
         console.log(card);  
         let head_shot;
         let card_text;
-        card.forEach((card_data, index) => {
-            head_shot = card_data.querySelectorAll(".card-img-top");
-            card_text = card_data.querySelectorAll(".card-text");
-
-            heroArray.push({
-                index: index, id: card_data.id, text: card_text[0].innerHTML, url: head_shot[0].src
-            });
-        });
-        console.log(heroArray);
-        //從DOM建立英雄人物陣列資料
         
-
-
-
-
-
-
-
-
         window.onload = function () {
             container =  document.querySelector("#container");
             btnCreateHeroArray = document.getElementById("createhero");
@@ -2201,7 +2184,15 @@
                 alert("從DOM建立英雄人物陣列資料成功！");
                 
                 //1.從DOM建立英雄人物資料
+                card.forEach((card_data, index) => {
+                head_shot = card_data.querySelector(".card-img-top");
+                card_text = card_data.querySelector(".card-text");
 
+                heroArray.push({
+                    index: index, id: card_data.id, text: card_text.innerText, url: head_shot.src
+                    });
+                });
+                console.log(heroArray);
                 //2.清除container
                 document.querySelector("#container").innerHTML = "";
             });
@@ -2212,7 +2203,12 @@
                     return;
                 }
                 //alert("以文字迭代英雄人物資料！");
-
+                heroArray.forEach(hero => {
+                let heroInfo = document.createElement("div");
+                heroInfo.setAttribute("style", "margin: 20px");
+                heroInfo.innerHTML = `index: ${hero.index}, id: ${hero.id}, text: ${hero.text}, url: ${hero.url}`;
+                _result.append(heroInfo);
+                })
                 
             });
 
