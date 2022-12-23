@@ -1,13 +1,22 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 :root{
     --wgreen: #00C300;
     --fgray: #373C49;
     --white: #fff;
     --fgreen: rgb(47, 239, 47);
+}
+.main-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: var(--white);
 }
 nav{
     --bs-light-rgb: var(--white);
@@ -29,10 +38,169 @@ nav{
     color: var(--wgreen);
     font-weight: 700;
 }
+.collapse .btn{
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 8px 30px;
+}
 .btn-success{
     --bs-btn-bg: var(--wgreen)!important;
     --bs-btn-hover-bg: var(--fgreen);
 }
 .btn:hover{
     --bs-btn-hover-bg:var(--fgreen);
+}
+.section-kv{
+    margin-top: 80px;
+}
+.kv-container{
+    position: relative;
+    height: 60vh;
+    background: url(/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/premium_hero-1500.png.webp) no-repeat center center;
+}
+.kv-deco-big{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.kv-deco-small{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.whoscall-main-title {
+    position: absolute;
+    top: 120px;
+    left: 250px;
+}
+.whoscall-main-title h2{
+    color: var(--fgray);
+    font-size: 44px;
+    font-weight: 700;
+}
+.whoscall-main-title p{
+    color: var(--fgray);
+    font-size: 24px;
+    font-weight: 700;
+}
+.whoscall-main-title span{
+    color: var(--fgray);
+    font-weight: 700;
+    font-size: 20px;
+}
+.whoscall-main-title button{
+    display: block;
+    padding: 8px 30px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+.whoscall-main-title .yellow{
+    background: linear-gradient(89.2deg, #ffbd00 59.96%, #ffe000 98.78%) 0 100%/100% 10px no-repeat;
+}
+.function-title h2{
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--fgray);
+}
+.btn-outline-primary{
+    --bs-btn-color: var(--wgreen) !important;
+    --bs-btn-border-color:var(--wgreen)!important;
+}
+.btn-check:checked+.btn{
+    --bs-btn-active-bg:var(--wgreen);
+    --bs-btn-active-border-color:var(--wgreen);
+}
+.function-feature h3{
+    color: var(--wgreen);
+    font-size: 36px;
+    font-weight: 700;
+}
+.function-feature p{
+    color: var(--fgray);
+    font-size: 24px;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.function-feature .green{
+    background: linear-gradient(180deg, transparent 0, transparent 50%, rgba(151, 245, 151, .5) 0, rgba(151, 245, 151, .5));
+}
+.function-pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.function-container .row:nth-child(even){
+    flex-direction: row-reverse;
+}
+.function-ver .free .free-pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.function-ver .adv .adv-pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.function-ver a{
+    text-decoration: none;
+    color: var(--wgreen);
+
+}
+.function-ver a:hover{
+    --bs-link-hover-color:var(--wgreen);
+}
+.price-deco{
+    position: relative;
+}
+.price-deco::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12px;
+    background-color: #00c300;
+    width: calc(100% - 5px);
+    height: 100%;
+    transform: skewX(-30deg);
+    margin-bottom: 10px;
+}
+.price-deco img{
+    width: 25px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+.price-deco .skew{
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+.section-advanced{
+    background-color: #F5F6F9;
+}
+.section-download{
+    margin-top: 100px;
+    background: url(/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/index-download-bg.svg) center center;
+}
+.row .main-icon img{
+    width: 100%;
+    vertical-align: middle;
+}
+.app-title p{
+    color: var(--white);
+    font-size: 40px;
+    font-weight: 700;
+}
+.app-title span{
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 25px;
+}
+.app-title .app-icon img{
+    width: 100%;
+    vertical-align: middle;
+}
+.app-icon .apple-icon{
+    padding-right: 10px;
 }
