@@ -46,6 +46,8 @@ nav{
 .btn-success{
     --bs-btn-bg: var(--wgreen)!important;
     --bs-btn-hover-bg: var(--fgreen);
+    --bs-btn-hover-border-color: var(--fgreen)!important;
+    --bs-btn-border-color: transparent!important;
 }
 .btn:hover{
     --bs-btn-hover-bg:var(--fgreen);
@@ -148,13 +150,35 @@ nav{
 .function-ver a:hover{
     --bs-link-hover-color:var(--wgreen);
 }
+.col-12 .card-body{
+    padding-bottom: 50px;
+    position: relative;
+}
+.card-head{
+    position: relative;
+}
+.card-head-deco{
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background-color: var(--wgreen);
+    width: 100%;
+    text-align: center;
+}
+.card-head-deco p{
+    margin-bottom: 0;
+    color: var(--white);
+}
+.price-version .green{
+    color: var(--wgreen);
+}
 .price-deco{
     position: relative;
 }
 .price-deco::before{
     content: "";
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 12px;
     background-color: #00c300;
     width: calc(100% - 5px);
@@ -168,15 +192,49 @@ nav{
     z-index: 1;
     vertical-align: middle;
     padding-right: 5px;
+    top: -5px;
 }
 .price-deco .skew{
     color: var(--white);
     position: relative;
     z-index: 1;
     display: block;
+    top: -5px;
 }
 .section-advanced{
     background-color: #F5F6F9;
+    padding-bottom: 100px;
+}
+.accordion-item:last-of-type .accordion-button.collapsed{
+    --bs-accordion-inner-border-radius:0;
+}
+.accordion-button:focus{
+    --bs-accordion-btn-focus-border-color:transparent;
+    --bs-accordion-btn-focus-box-shadow:0;
+}
+.accordion-button:not(.collapsed){
+    --bs-accordion-active-color:black;
+    --bs-accordion-active-bg:var(--white);
+    border-bottom: 0!important;
+}
+.accordion{
+    --bs-accordion-border-width:0!important;
+}
+.accordion-button{
+    border-bottom: 1px solid black!important;
+    --bs-accordion-btn-padding-x:0;
+}
+.accordion-button::after{
+    background-image: none!important;
+    transform:none!important;
+}
+.accordion-button .fa-solid{
+    color: var(--wgreen);
+    font-size: 40px;
+}
+.QA-btn[aria-expanded="false"] .fa-minus,
+.QA-btn[aria-expanded="true"] .fa-plus {
+    display: none;
 }
 .section-download{
     margin-top: 100px;
@@ -203,4 +261,81 @@ nav{
 }
 .app-icon .apple-icon{
     padding-right: 10px;
+}
+
+@media screen and (width < 768px) {
+    .navbar-nav{
+        align-items: center;
+        height: 100vh;
+    }
+    .navbar-toggler{
+        position: relative;
+    }
+    .navbar-collapse .btn{
+        position: absolute;
+        top: 1.5em;
+        right: 5em;
+        padding: 0;
+        border-radius: 0;
+        background-color: var(--white);
+        color: var(--wgreen);
+        border: none;
+        border-bottom: 1px solid var(--wgreen);
+    }
+    .whoscall-main-title{
+        left: 100px;
+    }
+    .whoscall-main-title h2{
+        font-size: 38px;
+    }
+    .whoscall-main-title p{
+        font-size: 18px;
+    }
+    .whoscall-main-title span{
+        font-size: 14px;
+    }
+    .function-feature,.function-ver{
+        padding-left: 20px;
+    }
+    .card-body .btn{
+        width: 25%!important;
+    }
+    .row .main-icon{
+        width: 20%;
+    }
+    .download-container .row .col-12{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .download-container .row .col-9{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .app-icon{
+        flex-direction: column;
+    }
+}
+@media screen and (768px < width < 1024px){
+    .navbar-nav {
+        align-items: center;
+        height: 100vh;
+    }
+
+    .navbar-toggler {
+        position: relative;
+    }
+
+    .navbar-collapse .btn {
+        position: absolute;
+        top: 1.5em;
+        right: 5em;
+        padding: 0;
+        border-radius: 0;
+        background-color: var(--white);
+        color: var(--wgreen);
+        border: none;
+        border-bottom: 1px solid var(--wgreen);
+    }
 }
