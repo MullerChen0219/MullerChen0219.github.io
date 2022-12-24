@@ -77,7 +77,7 @@
         <button class="btn btn-primary" id="tablehero">以表格呈現英雄人物資料</button>
     </div>
     <div id="result"></div>
-    <div id="container" class="row">
+    <div id="container" class="row p-5">
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" card-index="1">
             <div class="card" id="Aatrox">
                 <div class="headshot"> <img class="card-img-top"
@@ -2219,6 +2219,40 @@
                 }
                 
                 alert("以表格呈現英雄人物資料！");
+                _result.innerHTML = "";
+                //製作表格Table Thead 與 Tbody 分開製作
+
+                //建立表格並給予樣式
+                let _table = document.createElement("table");
+                _table.setAttribute("class", "table table-bordered table-striped table-dark");
+
+                let _thead = document.createElement("thead");
+                let _tbody = document.createElement("tbody");
+                let _theadTr = document.createElement("tr");
+
+                Object.keys(heroArray[0]).forEach(key => {
+                    let _theadTh = document.createElement("th");
+                    _theadTh.innerText = key;
+                    _theadTr.appendChild(_theadTh);
+                })
+                _thead.appendChild(_theadTr);
+
+                console.log(Object.keys(heroArray[0]));
+                // -----------------------------------
+                heroArray.forEach(hero => {
+                    let _tbodyTr = document.createElement("tr");
+                    Object.keys(hero).forEach(key => {
+                        let _tbodyTd = document.createElement("td");
+                        _tbodyTd.innerText = hero[key];
+                        _tbodyTr.appendChild(_tbodyTd);
+                    })
+                    _tbody.appendChild(_tbodyTr);
+                })
+                _table.appendChild(_thead);
+                _table.appendChild(_tbody);
+
+                container.appendChild(_table);
+
             });
         }
 
