@@ -81,12 +81,6 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-/* .section-creative .creative-cloud{
-    position: absolute;
-    top: 0;
-    left: 580px;
-    z-index: -1;
-} */
 .creative-item{
     display: flex;
     align-items: center;
@@ -346,10 +340,12 @@
     font-weight: 500;
     color: #5D6678;
 }
+
 .work-list-item{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 .work-list-item:nth-child(even){
     flex-direction: row-reverse;
@@ -388,7 +384,7 @@
     background-color: #F9FBFF;
     padding-top: 100px;
 }
-.team-work{
+.section-team-work .team-work{
     max-width: 1200px;
     margin: auto;
     padding-left: 15px;
@@ -618,7 +614,7 @@
     text-decoration: none;
     padding: 0 10px;
     font-size: 14px;
-    color: #5D6678;
+    color: #1FDE82;
 }
 @media screen and (width < 768px) {
     .header-content .main-nav {
@@ -675,4 +671,44 @@
     .HB{
         display: none;
     }
+}
+@media screen and (768px <= width < 1024px){
+    .projects-info-text span{
+        font-size: 30px;
+    }
+    .projects-info-text p{
+        font-size: 0.3em;
+    }
+    .projects-info-title h3{
+        font-size: 26px;
+    }
+}
+@media screen and (width >=1024px) {
+    .work .work-list .work-list-item:nth-child(1)::after {
+        content: url(/Day7HW-RWD-Maikon/maikon/arrow-1.svg);
+        position: absolute;
+        left: 7.9em;
+        top: 12em;
+        }
+    
+        .work .work-list .work-list-item:nth-child(2)::after {
+        content: url(/Day7HW-RWD-Maikon/maikon/arrow-2.svg);
+        position: absolute;
+        right: 44.8em;
+        top: 10.5em;
+        }
+    
+        .work .work-list .work-list-item:nth-child(3)::after {
+        content: url(/Day7HW-RWD-Maikon/maikon/arrow-3.svg);
+        position: absolute;
+        top: 7.7em;
+        right: 38em;
+        }
+    
+        .work .work-list .work-list-item:nth-child(4)::after {
+        content: url(/Day7HW-RWD-Maikon/maikon/arrow-4.svg);
+        position: absolute;
+        top: 11.6em;
+        right: 40em;
+        }
 }
