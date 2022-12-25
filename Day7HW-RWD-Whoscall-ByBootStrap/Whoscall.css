@@ -278,7 +278,44 @@ nav{
 .app-icon .apple-icon{
     padding-right: 10px;
 }
+.response-title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.response-title h3{
+    font-size: 40px;
+}
+.owl-theme .item {
+    height: 20rem;
+    padding: 1rem;
+}
 
+.owl-carousel .item h4 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.4375rem;
+    margin-top: 0rem;
+}
+.slide::before{
+    content:"";
+    background: url(/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/ic-quote-right.svg) no-repeat;
+    height: 2rem;
+    width: 2.8rem;
+    transform: rotateY(180deg);
+    text-align: left;
+    
+}
+.slide-text p{
+    font-size: 28px;
+    line-height: 1.6;
+}
+.slide-text span{
+    background: linear-gradient(180deg, transparent 0, transparent 50%, rgba(151, 245, 151, .5) 0, rgba(151, 245, 151, .5));
+}
+.slide-commentator p{
+    font-size: 22px;
+    color: #ccc;
+}
 @media screen and (width < 768px) {
     .navbar-nav{
         align-items: center;
