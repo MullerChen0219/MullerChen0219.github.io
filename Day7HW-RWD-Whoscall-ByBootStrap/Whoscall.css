@@ -4,6 +4,11 @@
     padding: 0;
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 :root{
     --wgreen: #00C300;
@@ -55,7 +60,7 @@ nav{
 .section-kv{
     margin-top: 80px;
 }
-.kv-container{
+.kv-container-xl{
     position: relative;
     height: 60vh;
     background: url(/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/premium_hero-1500.png.webp) no-repeat center center;
@@ -339,6 +344,9 @@ nav{
     .power-by{
         padding-left: 10px;
     }
+    .text,.language{
+        padding-left: 1.8rem;
+    }
 }
 @media screen and (768px < width < 1200px){
     .navbar-nav {
@@ -369,6 +377,10 @@ nav{
     }
     .follow-us .icon-list{
         padding-left: 0;
+    }
+    .text,
+    .language {
+        padding-left: 1rem;
     }
 }
 @media screen and (width > 1200px) {
