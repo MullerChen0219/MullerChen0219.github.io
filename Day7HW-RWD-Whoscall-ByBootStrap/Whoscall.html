@@ -12,7 +12,7 @@
     
     <header class="main-header">
         <nav class="navbar navbar-expand-xl justify-content-center bg-light">
-            <div class="container-lg">
+            <div class="container-xl">
                 <a class="navbar-brand" href="#"><h1>Whoscall</h1></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -355,61 +355,64 @@
         <section class="section-question">
             <div class="container-lg">
                 <div class="row justify-content-center pt-5">
+                    <div class="question-title">
+                        <h3>常見問題</h3>
+                    </div>
                     <div class="col-12 col-md-9 col-lg-9 col-xl-9">
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
+                                <p class="accordion-header" id="headingOne">
                                     <div class="d-flex justify-content-between">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             Q. 進階版是否有試用期？是否會自動續訂？
                                         </button>
                                         <div>
-                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                 <i class="fa-solid fa-plus"></i>
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                </p>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         購買進階版都將享有 7 天的試用期，並於試用期結束後自動續訂。若想暫停自動續訂，須自行至商店設定取消訂閱。
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                <p class="accordion-header" id="headingTwo">
                                     <div class="d-flex justify-content-between">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             Q. 我只想要試用，為什麼被收費了？
                                         </button>
                                         <div>
-                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 <i class="fa-solid fa-plus"></i>
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </h2>
+                                </p>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     試用期間結束後將會自動續訂，若想暫停自動續訂，須自行至商店設定取消訂閱。若沒在試用期到期前取消，則會被視同同意續訂而進行扣款。
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
+                                <p class="accordion-header" id="headingThree">
                                     <div class="d-flex justify-content-between">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             Q. 使用自動封鎖騷擾號碼功能後，就不會接到騷擾號碼了嗎？
                                         </button>
                                         <div>
-                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                 <i class="fa-solid fa-plus"></i>
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </h2>
+                                </p>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Whoscall 會定期統計並驗證最新、最高頻被回報的詐騙與騷擾號碼，例如：「假冒商家詐騙」、「保險推銷」、「一接就掛」等等，並整合內政部警政署 165 提供的詐騙電話，每週更新於特定清單中。只要開啟自動封鎖騷擾號碼，即可自動阻擋這些高頻騷擾電話。
@@ -417,19 +420,19 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
+                                <p class="accordion-header" id="headingFour">
                                     <div class="d-flex justify-content-between">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                             Q.請問進階版可以跨系統/裝置使用嗎？例如我原先使用 iPhone，想改使用 Android 系統。
                                         </button>
                                         <div>
-                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                                 <i class="fa-solid fa-plus"></i>
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </h2>
+                                </p>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         由於 Whoscall 進階版訂購的平台分別為 Google Play 與 App Store 且服務功能不同，因此服務內容與方案無法進行轉移的。
@@ -437,19 +440,19 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
+                                <p class="accordion-header" id="headingFive">
                                     <div class="d-flex justify-content-between">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                             Q. Whoscall 進階版團購組合的序號可於何處進行兌換？
                                         </button>
                                         <div>
-                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                            <button class="QA-btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                                 <i class="fa-solid fa-plus"></i>
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </h2>
+                                </p>
                                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         請前往 https://redeem.whoscall.com/zh-Hant/ 。登入 Whoscall 帳號成功後，輸入代碼即可完成兌換。
@@ -464,12 +467,12 @@
         <section class="section-download">
             <div class="download-container">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-2 col-lg-2 col-xl-2">
+                    <div class="col-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="main-icon">
                             <img src="/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/download-app-icon.svg" alt="download">
                         </div>
                     </div>
-                    <div class="col-9 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-9 col-md-4 col-lg-4 col-xl-4">
                         <div class="app-title text-left">
                             <p>Download Now</p>
                             <span>你的陌生來電辨識 APP</span>
@@ -485,8 +488,8 @@
     </main>
 
     <footer class="main-footer">
-        <div class="container-footer-content">
-            <div class="row justify-content-evenly">
+        <div class="container-xl footer-content">
+            <div class="row justify-content-between">
                 <div class="col-12 col-md-2 col-lg-2 col-xl-2">
                     <div class="link">
                         <p class="mb-0">Whoscall</p>
@@ -541,10 +544,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-12 col-md-2 col-lg-2 col-xl-2">
+                <div class="col-12 col-md-3 col-lg-3 col-xl-3">
                     <div class="footer-social">
                         <div class="follow-us">
-                            <p>追蹤我們</p>
+                            <p class="ps-3">追蹤我們</p>
                             <ul class="icon-list">
                                 <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
@@ -559,16 +562,16 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="footer-copyright row justify-content-between mx-3">
-                <div class="col-12 col-md-7 col-lg-5 col-xl-5">
+        <div class="container-xl">
+            <div class="footer-copyright row justify-content-between align-items-center pe-3">
+                <div class="col-12 col-md-7 col-lg-7 col-xl-7">
                     <div class="text">
-                        <p>© 2022 Gogolook. All Rights Reserved.</p>
+                        <p class="mb-0">© 2022 Gogolook. All Rights Reserved.</p>
                         <a href="#">服務條款</a>
                         <a href="#">隱私權政策</a>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 col-lg-2 col-xl-2">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="language">
                         <a href="#"><i class="fa-solid fa-globe"></i></a></i>
                         <select name="language" >
