@@ -44,3 +44,27 @@ $(".owl-carousel").owlCarousel({
   }
 });
 
+
+let getBrowserWidth = function(){
+    if(window.innerWidth < 768){
+        return "xs";
+    };
+  };
+let device = getBrowserWidth();
+
+  if (device === "xs") {
+  $(document).ready(() => {
+  $('.drop-list').click(function(event){
+      event.preventDefault();
+      $(this).parent().find('.link-list').slideToggle(500);
+      $(this).parent().siblings().find('.link-list').slideUp();
+    });
+  });
+}
+
+
+
+  
+    
+
+
