@@ -299,6 +299,9 @@ nav{
     font-size: 1.4375rem;
     margin-top: 0rem;
 }
+.owl-theme .owl-dots .owl-dot.active span{
+    background: var(--wgreen)!important;
+}
 .slide::before{
     content:"";
     background: url(/Day7HW-RWD-Whoscall-ByBootStrap/whoscall/ic-quote-right.svg) no-repeat;
@@ -314,6 +317,14 @@ nav{
 }
 .slide-text span{
     background: linear-gradient(180deg, transparent 0, transparent 50%, rgba(151, 245, 151, .5) 0, rgba(151, 245, 151, .5));
+}
+.slide-commentator::before{
+    content: "";
+    height: .1rem;
+    width: 3.5rem;
+    background-color: #CCC;
+    align-items: center;
+    margin-right: .5rem;
 }
 .slide-commentator p{
     font-size: 22px;
@@ -386,6 +397,13 @@ nav{
     }
     .text,.language{
         padding-left: 1.8rem;
+    }
+    .slide-text p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .response-title h3{
+        font-size: 28px;
     }
 }
 @media screen and (768px < width < 1200px){
