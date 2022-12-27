@@ -9,6 +9,9 @@
 #menu-control{
     display: none;
 }
+address{
+    font-style: normal;
+}
 .main-header{
     width: 100%;
     padding: 20px 0;
@@ -623,6 +626,7 @@
             background-color: #fff;
             top: 100%;
             right: 0;
+            height: 100vh;
         }
     .HB {
         width: 40px;
