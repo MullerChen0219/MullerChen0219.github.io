@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background: linear-gradient(90deg, #249beb, #045082);
+}
+.game-title h1{
+    font-size: 48px;
+    color: #fa0;
+}
+.game-title .pic{
+    width: 100px;
+    box-sizing: border-box;
+}
+.game-title .pic img{
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 3px solid #CCC;
+    background-color: #7BBBC4;
+    height: 50vh;
+    border-radius: 1em;
+}
+.history{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1rem;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.display .history p{
+    margin-bottom: 0;
+    margin: 0 1rem;
+    color: #fff;
+}
