@@ -76,7 +76,7 @@ _iphone.addEventListener('click', () => {
         let colorCol = document.createElement('div');
         colorCol.classList.add('col-12','col-md-3','col-lg-3','col-xl-3','d-flex','justify-content-center','mb-2');
         let colorBtn = document.createElement('button');
-        colorBtn.classList.add('btn','btn-outline-dark');
+        colorBtn.classList.add('btn','btn-outline-dark','color-pick');
         let colorMark = document.createElement('div');
         colorMark.classList.add('color');
         colorMark.setAttribute('style',`background-color:${iphoneProMaxArray.filter(x => x.price === '38900')[i].hex}`);
@@ -123,10 +123,26 @@ _iphone.addEventListener('click', () => {
     _rowPriceTitle.classList.add('title','w-100');
         _rowPriceTitle.innerHTML = '<h2>價格試算</h2>';
     let _pPriceCount = document.createElement('p');
+    _pPriceCount.classList.add('total');
         _rowPrice.append(_rowPriceTitle,_pPriceCount);
     _mainColRight.append(_rowPrice);
 
-    const a = document.querySelectorAll('.norm');
+    let colorList = document.querySelectorAll('.color-pick');
+    colorList.forEach(colors => {
+        colors.addEventListener('click', () => {
+            let pickedColor = iphoneProMaxArray.find(x => x['hex_text'] == colors.querySelector('p').innerText)['pic'];
+            _galleryImg.src = pickedColor;
+        })
+    })
+
+    let normList = document.querySelectorAll('.norm');
+    normList.forEach(norms => {
+        norms.addEventListener('click', () => {
+            _pPriceCount.innerText = norms.querySelector('span').innerText;
+        })
+    })
+
+
 })
 //#endregion
 
@@ -156,7 +172,7 @@ _ipad.addEventListener('click', ()=> {
         let colorCol = document.createElement('div');
         colorCol.classList.add('col-12','col-md-3','col-lg-3','col-xl-3','d-flex','justify-content-center','mb-2');
         let colorBtn = document.createElement('button');
-        colorBtn.classList.add('btn','btn-outline-dark');
+        colorBtn.classList.add('btn','btn-outline-dark','color-pick');
         let colorMark = document.createElement('div');
         colorMark.classList.add('color');
         colorMark.setAttribute('style',`background-color:${iPadProArray.filter(x => x.price === '27900')[i].hex}`);
@@ -203,8 +219,24 @@ _ipad.addEventListener('click', ()=> {
     _rowPriceTitle.classList.add('title','w-100');
         _rowPriceTitle.innerHTML = '<h2>價格試算</h2>';
     let _pPriceCount = document.createElement('p');
+    _pPriceCount.classList.add('total');
         _rowPrice.append(_rowPriceTitle,_pPriceCount);
     _mainColRight.append(_rowPrice);
+
+    let colorList = document.querySelectorAll('.color-pick');
+    colorList.forEach(colors => {
+        colors.addEventListener('click', () => {
+            let pickedColor = iPadProArray.find(x => x['hex_text'] == colors.querySelector('p').innerText)['pic'];
+            _galleryImg.src = pickedColor;
+        })
+    })
+
+    let normList = document.querySelectorAll('.norm');
+    normList.forEach(norms => {
+        norms.addEventListener('click', () => {
+            _pPriceCount.innerText = norms.querySelector('span').innerText;
+        })
+    })
 })
 //#endregion
 
@@ -234,7 +266,7 @@ _MacBook.addEventListener('click', () => {
         let colorCol = document.createElement('div');
         colorCol.classList.add('col-12','col-md-3','col-lg-3','col-xl-3','d-flex','justify-content-center','mb-2');
         let colorBtn = document.createElement('button');
-        colorBtn.classList.add('btn','btn-outline-dark');
+        colorBtn.classList.add('btn','btn-outline-dark','color-pick');
         let colorMark = document.createElement('div');
         colorMark.classList.add('color');
         colorMark.setAttribute('style',`background-color:${MacBookProArray.filter(x => x.price === '74900')[i].hex}`);
@@ -281,8 +313,24 @@ _MacBook.addEventListener('click', () => {
     _rowPriceTitle.classList.add('title','w-100');
         _rowPriceTitle.innerHTML = '<h2>價格試算</h2>';
     let _pPriceCount = document.createElement('p');
+    _pPriceCount.classList.add('total');
         _rowPrice.append(_rowPriceTitle,_pPriceCount);
     _mainColRight.append(_rowPrice);
+
+    let colorList = document.querySelectorAll('.color-pick');
+    colorList.forEach(colors => {
+        colors.addEventListener('click', () => {
+            let pickedColor = MacBookProArray.find(x => x['hex_text'] == colors.querySelector('p').innerText)['pic'];
+            _galleryImg.src = pickedColor;
+        })
+    })
+
+    let normList = document.querySelectorAll('.norm');
+    normList.forEach(norms => {
+        norms.addEventListener('click', () => {
+            _pPriceCount.innerText = norms.querySelector('span').innerText;
+        })
+    })
 })
 //#endregion
 
