@@ -1,3 +1,4 @@
+//資料結構
 let iphoneProMaxArray = [
     {hex: '#60576A', hex_text: '深紫色', pic: '/JSHW-ApplePurchase/iphone-14-pro-deeppurple.jfif', storage: '128GB', price: '38900'},
     {hex: '#60576A', hex_text: '深紫色', pic: '/JSHW-ApplePurchase/iphone-14-pro-deeppurple.jfif', storage: '256GB', price: '42400'},
