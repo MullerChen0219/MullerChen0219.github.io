@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyEventCalendar</title>
+    <link rel="stylesheet" href="MyEventCalendar.css">
+</head>
+<body>
+    
+    <div id="container">
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div>
+                <button id="prevBtn">Prev</button>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+        
+        <div id="weekdays">
+            <ul class="sevenDays">
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+        </div>
+        <div id="calendar">
+            <ul id="calendarList"></ul>
+        </div>
+
+        <div id="newEventModal">
+            <h2>新行程</h2>
+            <input id="eventTitleInput" placeholder="行程標題">
+
+            <button id="saveBtn">儲存</button>
+            <button id="cancelBtn">取消</button>
+        </div>
+
+        <div id="deleteEventModal">
+            <h2>行程</h2>
+
+            <p id="eventText"></p>
+
+            <button id="deleteBtn">刪除</button>
+            <button id="closeBtn">關閉</button>
+        </div>
+
+        <div id="modalBackDrop"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="MyEventCalendar.js"></script>
+</body>
+</html>
