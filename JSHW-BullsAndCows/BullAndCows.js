@@ -8,7 +8,7 @@ const _giveUp = document.querySelector('#giveUp');
 const _checkAnswer = document.querySelector('#checkAnswer');
 
 //正則表達式(判定輸入的每個字元是否為0~9數字)
-const regex = /\d/;
+const regex = /^(0|[1-9][0-9]*)$/;
 //變數宣告區
 const min = 0;
 const max = 9;
