@@ -25,7 +25,7 @@ html,body{
     flex-direction: column;
     border: 3px solid #CCC;
     background-color: #7BBBC4;
-    height: 50vh;
+    height: 55vh;
     border-radius: 1em;
 }
 .history{
@@ -42,4 +42,38 @@ html,body{
     margin-bottom: 0;
     margin: 0 1rem;
     color: #fff;
+}
+
+
+@media screen and (width < 768px) {
+    .game-title h1{
+        font-size: 28px;
+    }
+
+    .input-group{
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-group .input-group-text{
+        display: block;
+        font-size: 14px;
+        margin-top: 5px;
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+    }
+    #inputArea{
+        width: 50%;
+        order: -1;
+    }
+    #guess{
+        margin-top: 5px;
+    }
+    .btn-zone{
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-zone button{
+        width: 50%;
+        margin-bottom: 10px;
+    }
 }

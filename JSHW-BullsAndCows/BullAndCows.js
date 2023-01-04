@@ -8,7 +8,8 @@ const _giveUp = document.querySelector('#giveUp');
 const _checkAnswer = document.querySelector('#checkAnswer');
 
 //正則表達式(判定輸入的每個字元是否為0~9數字)
-const regex = /^(0|[1-9][0-9]*)$/;
+// const regex = /^(0|[1-9][0-9]*)$/;
+   const regex = /^(?!\d*?(\d)\d*?\1)\d{4}$/;
 //變數宣告區
 const min = 0;
 const max = 9;
@@ -142,6 +143,37 @@ function setHistoryMessage() {
     _history.setAttribute('class', 'history')
     _button.setAttribute('class','btn btn-danger');
 }
+//為input及猜答案共用判斷數字方法
+function guessing() {
+    createGuessArray();
+    distinct = [...new Set(guessArray)].length;
+    isNotRepeat = distinct === 4 && guessArray.length === 4;
+    isNotNumber = regex.test(guess)
+
+    if (answerArray.length === 0) {
+        initialAlert();
+        cleanInput();
+        return;
+    }
+    else if (!isNotRepeat) {
+        repeatNumberAlert();
+        initializeGuessArray();
+        cleanInput();
+        return;
+    }
+    else if (!isNotNumber) {
+        notNumberAlert();
+        initializeGuessArray();
+        cleanInput();
+        return;
+    }
+    else {
+        getIntersect();
+        initializeGuessArray();
+        checkIsWin();
+        
+    }
+}
 //判斷遊戲勝利方法
 function checkIsWin() {
     if (a.length == 4){
@@ -164,9 +196,8 @@ function checkIsWin() {
     cleanInput();
     }
 }
-
+function initButtons() {
 // ----------------------------------------------------以下為按鈕事件註冊
-
 //遊戲開始按鈕click事件
 _start.addEventListener('click', () => {
     initializeAnswerArray();
@@ -174,8 +205,16 @@ _start.addEventListener('click', () => {
     setGame();
     _start.disabled = true;
     _guess.disabled = false;
+    _giveUp.disabled = false;
+    _checkAnswer.disabled = false;
     cleanInput();
 })
+_input.addEventListener('keyup', function(e) {
+    if (e.keyCode === 13) {
+        guessing();
+    }
+})
+
 //看答案按鈕click事件
 _checkAnswer.addEventListener('click', () => {
     answerString = '';
@@ -191,28 +230,30 @@ _giveUp.addEventListener('click', () => {
     initializeGuessArray();
     _display.innerHTML = '';
     _start.disabled = false;
+    _giveUp.disabled = true;
+    _checkAnswer.disabled = true;
     cleanInput();
 })
 //猜起來按鈕click事件
 _guess.addEventListener('click', () => {
     createGuessArray();
     distinct = [...new Set(guessArray)].length;
-    isNotNumber = regex.test(guess)
     isNotRepeat = distinct === 4 && guessArray.length === 4;
+    isNotNumber = regex.test(guess);
 
     if (answerArray.length === 0) {
         initialAlert();
         cleanInput();
         return;
     }
-    else if (!isNotNumber) {
-        notNumberAlert();
+    else if (!isNotRepeat) {
+        repeatNumberAlert();
         initializeGuessArray();
         cleanInput();
         return;
     }
-    else if (!isNotRepeat) {
-        repeatNumberAlert();
+    else if (!isNotNumber) {
+        notNumberAlert();
         initializeGuessArray();
         cleanInput();
         return;
@@ -224,5 +265,14 @@ _guess.addEventListener('click', () => {
         
     }
 })
+}
+
+window.onload = function() {
+    initButtons();
+
+    _checkAnswer.disabled = true;
+    _giveUp.disabled = true;
+}
+
 
 
