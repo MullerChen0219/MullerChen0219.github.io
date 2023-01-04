@@ -113,7 +113,7 @@ function saveEvent() {
 
 function deleteEvent() {
     events = events.filter(e => e.date !== clicked);
-    localStorage.setItem('event', JSON.stringify(events));
+    localStorage.setItem('events', JSON.stringify(events));
     closeModal();
 }
 
@@ -128,6 +128,10 @@ function initButtons() {
         load();
     });
 
+    document.getElementById('currentMonth').addEventListener('click', () => {
+        nav = 0;
+        load();
+    })
     document.getElementById('saveBtn').addEventListener('click', saveEvent);
 
     document.getElementById('cancelBtn').addEventListener('click', closeModal);
