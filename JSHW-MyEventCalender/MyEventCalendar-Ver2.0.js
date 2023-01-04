@@ -73,17 +73,20 @@ function load() {
             let dataDate = daySquare.dataset.Date;
             daySquare.id = dataDate;
 
-            const eventForDay = events.find(e => e.date === dayString);     //G
-
+            let eventForDay = events.find(e => e.date === dayString);     //G
+            
             if (i - paddingDays === day && nav === 0) {     //H
                 daySquare.id = 'currentDay';
             }
 
             if (eventForDay) {      //I
-                let eventDiv = document.createElement('div');
-                eventDiv.classList.add('event');
-                eventDiv.innerText = eventForDay.title;
-                daySquare.appendChild(eventDiv);
+                events.filter(e => e.date === dayString).forEach(events => {
+                    let eventDiv = document.createElement('div');
+                    eventDiv.classList.add('event');
+                    eventDiv.innerText = events.title;
+                    daySquare.appendChild(eventDiv);
+                });
+                
             }
             daySquare.addEventListener('click', () => openModal(dayString));  //J
         } else {
@@ -110,7 +113,14 @@ function openModal(date) {
         _deleteEventModal.style.display = 'block';
     } else {
         _newEventModal.style.display = 'block';
+        let inputEdit = document.createElement('input');
+        _newEventModal.prepend
+        
+        
+        
+        (inputEdit);
     }
+    
 
     _backDrop.style.display = 'block';
 }
