@@ -106,7 +106,7 @@
         let lolHeroArray = [];
         function requestJson(uri) {
             xhr.onload = function() {
-                // console.log(this);
+                console.log(this);
                 lolHeroArray.push(JSON.parse(this.responseText).data);
 
                 initButton();
