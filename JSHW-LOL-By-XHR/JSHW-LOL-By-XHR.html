@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSHW-LOL-By-XHR</title>
+</head>
+<body>
+    <h1>JSHW-LOL-By-XHR</h1>
+    <button id="btnGetLolJson">Get LOL-JSON</button>
+
+
+
+    <script>
+        const  urlLolJson = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json";
+
+        
+
+        const _btnGetLolJson = document.querySelector('#btnGetLolJson');
+        let xhr = new XMLHttpRequest();
+        let lolHeroArray = [];
+        function requestJson(uri) {
+            xhr.onload = function() {
+                console.log(this);
+                lolHeroArray.push(JSON.parse(this.responseText).data);
+            }
+
+            xhr.open("GET", uri);
+            xhr.send();
+
+            
+        }
+
+        function initButton() {
+            _btnGetLolJson.addEventListener('click', requestJson.bind(null, urlLolJson));
+        }
+
+        window.onload = function () {
+            requestJson(urlLolJson);
+            initButton();
+
+            
+
+        }
+    </script>
+</body>
+</html>

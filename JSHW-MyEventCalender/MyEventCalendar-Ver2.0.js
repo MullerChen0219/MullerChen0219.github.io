@@ -5,6 +5,7 @@
 //若抓不到則回傳空陣列
 let nav = 0;
 let clicked = null;
+let clickedId = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 //Dom節點
@@ -64,14 +65,13 @@ function load() {
         daySquare.classList.add('day');
 
 
-        const dayString = `${month + 1}/${i - paddingDays}/${year}`
-
+        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+        const eventIdTag = `${month + 1}-${i - paddingDays}`;
 
         if (i > paddingDays) {      //F
             daySquare.innerText = i - paddingDays;
             
-            let dataDate = daySquare.dataset.Date;
-            daySquare.id = dataDate;
+            daySquare.setAttribute('eventId',`${month + 1}-${i - paddingDays}`);
 
             let eventForDay = events.find(e => e.date === dayString);     //G
             
@@ -88,7 +88,7 @@ function load() {
                 });
                 
             }
-            daySquare.addEventListener('click', () => openModal(dayString));  //J
+            daySquare.addEventListener('click', () => openModal(dayString,eventIdTag));  //J
         } else {
             daySquare.classList.add('padding');     //K
         }
@@ -103,22 +103,16 @@ function load() {
 //
 //
 //
-function openModal(date) {
+function openModal(date,id) {
     clicked = date;
-
+    clickedId = id;
     const eventForDay = events.find(e => e.date === clicked);
 
     if (eventForDay) {
-        document.getElementById('eventTitleInputEdit').value = eventForDay.title;
+        document.getElementById('eventTitleInput').value = eventForDay.title;
         _deleteEventModal.style.display = 'block';
     } else {
         _newEventModal.style.display = 'block';
-        let inputEdit = document.createElement('input');
-        _newEventModal.prepend
-        
-        
-        
-        (inputEdit);
     }
     
 
@@ -151,13 +145,15 @@ function saveEvent() {
         eventTitleInput.classList.remove('error');
 
         events.push({
+            eventId: clickedId,
             date: clicked,
             title: eventTitleInput.value,
         });
 
         localStorage.setItem('events', JSON.stringify(events));
         closeModal();
-    } else {
+        load();
+    }else {
         eventTitleInput.classList.add('error');
     }
 }
@@ -166,14 +162,16 @@ function saveEvent() {
 function saveEditedEvent() {
     if (eventTitleInputEdit.value) {
         eventTitleInputEdit.classList.remove('error');
-
+        
         events.push({
+            eventId: clickedId,
             date: clicked,
             title: eventTitleInputEdit.value,
         });
 
         localStorage.setItem('events', JSON.stringify(events));
         closeModal();
+        load();
     } else {
         eventTitleInputEdit.classList.add('error');
     }
@@ -183,6 +181,7 @@ function deleteEvent() {
     events = events.filter(e => e.date !== clicked);
     localStorage.setItem('events', JSON.stringify(events));
     closeModal();
+    load();
 }
 //初始化所有按鈕
 function initButtons() {
