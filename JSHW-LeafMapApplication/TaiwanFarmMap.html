@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
+        <title>Taiwan Farm Map</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -13,17 +13,182 @@
         crossorigin=""></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
         <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+        <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <style>
+            
+            .container > .row {
+                height: 100vh;
+            }
+
+            #farmMap {
+                height: 100%;
+            }
+            
+            .farmPic{
+                width: 300px;
+                border: 3px solid #ccc;
+                border-radius:12px;
+            }
+            .farmPic img{
+                width: 100%;
+                vertical-align: middle;
+                border-radius: 10px;
+            }
+            .True::after{
+                content: "V";
+                width: 3rem;
+                height: 3rem;
+                color: rgb(3, 15, 248);
+            }
+            .False::after{
+                content: "X";
+                width: 3rem;
+                height: 3rem;
+                color: red;
+            }
+        </style>
     </head>
     <body>
-
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-6">
+                    <div id="farmMap"></div>
+                </div>
+                <div class="col-6">
+                    <div class="row py-5">
+                        <div class="col-12">
+                            <h1>農委會推薦臺灣農村一日遊景點</h1>
+                        </div>
+                    </div>
+                    <div id="farmDetails" class="row"></div>
+                </div>
+            </div>
+        </div>    
         
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="TaiwanFarm.js"></script>
         <script>
-            let map;
-            const areaDataRequest = fetch
+            //宣告
+            let farmMap;
+            const areaDataRequest = fetch('https://raw.githubusercontent.com/MullerChen0219/FileStorage/main/areaData.json')
+            const farmDataRequest = fetch('https://raw.githubusercontent.com/MullerChen0219/FileStorage/main/taiwanFarm.json')
+            let areaData;   //行政區資料
+            let farmData;   //農場資料
+            let farmAreaData;   // 農場資料 + 行政區經緯度座標
+            let markers = L.markerClusterGroup()
+            //DOM
+            const _farmDetails = document.querySelector('#farmDetails')
+            //function
+            function initMap() {
+                //初始地圖
+                farmMap = L.map('farmMap', {
+                    center: [23.97565, 120.9738819],
+                    zoom: 9
+                })
+
+                //設定圖層
+                let osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                let osm = new L.TileLayer(osmUrl, { minZoom: 8, maxZoom: 19 })
+                farmMap.addLayer(osm)
+            }
+
+            function setMapItem() {
+                Promise.all([areaDataRequest, farmDataRequest])
+                    .then(res => Promise.all(res.map(x => x.json())))
+                    .then(jsonData => {
+                        [areaData, farmData] = jsonData
+                        // console.log('轉換格式成功')
+                        farmAreaData = farmData.map(x => {
+                            let area = areaData.find(y => y.City == x.City && y.District == x.Town)
+                            return {
+                                cityTown: `${x.City}${x.Town}`,
+                                name: `${x.Name}`,
+                                address: `${x.Address}`,
+                                tel: `${x.Tel}`,
+                                feature: `${x.HostWords}`,
+                                openHours: `${x.OpenHours}`,
+                                creditCard: `${x.CreditCard}`,
+                                travelCard: `${x.TravelCard}`,
+                                pic: `${x.Photo}`,
+                                lat: area != undefined ? area.Lat : undefined,
+                                lng: area != undefined ? area.Lng : undefined
+                            }
+                        }).filter(x => x.lng != undefined).groupBy('cityTown')
+
+
+                        renderMarker()
+                        // initCountySelect()
+                    })
+            }
+
+            function renderMarker() {
+                if (markers) markers.clearLayers()
+
+
+                Object.keys(farmAreaData).forEach(farms => {
+                    let allFarms = farmAreaData[farms]
+                    let marker = L.marker([allFarms[0]['lat'], allFarms[0]['lng']])
+
+                    marker.bindPopup(
+                        `
+                        <h3>${allFarms[0]['name']}</h3>
+                        <p>${allFarms[0]['address']}</p>
+                        <address>Tel:${allFarms[0]['tel']}</address>
+                        `
+                    )
+
+                    marker.addEventListener('click', function () {
+                        _farmDetails.innerHTML = ''
+                        
+                        let farmInfos = ''
+                        allFarms.forEach(farms => {
+
+                            farmInfos = `<div class="col-6">
+                                            <div class="farmPic mx-auto"> 
+                                                <img  src="${farms.pic}">
+                                            </div>
+                                            <div class="sevice-time">
+                                                <p class="fs-2">開放時間:</p>
+                                                <p class="fs-3">${farms.openHours}</p>
+                                            </div>
+                                            <div class="payment"> 
+                                                <p class="fs-3">付款方式:</p>
+                                                <span class="${farms.creditCard} fs-4">信用卡</span>
+                                                <span class="${farms.travelCard} fs-4">國旅卡</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="farmText mx-auto"> 
+                                                <p>${farms.feature}</p>
+                                            </div>
+                                        </div>`
+                        })
+                        _farmDetails.innerHTML = farmInfos
+                    })
+
+                    markers.addLayer(marker)
+                })
+
+                farmMap.addLayer(markers)
+
+            }
+            //window.onload
+            window.onload = function() {
+                initMap();
+                setMapItem();
+            }
+
+            Array.prototype.groupBy = function(prop) {
+            return this.reduce((groups, item) => {
+                const val = item[prop]
+                groups[val] = groups[val] || []
+                groups[val].push(item)
+                return groups
+            }, {})
+            }
         </script>
     </body>
 </html>
