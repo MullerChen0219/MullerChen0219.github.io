@@ -154,7 +154,8 @@ let activitySpeed
 //DOM
 const _startBtn = document.querySelector('#startBtn')
 const _resultModal = document.querySelector('#resultModal')
-const _msgBox = document.querySelector('#msgBox')
+const _msgBoxForExercise = document.querySelector('#msgBoxForExercise')
+const _msgBoxForActivity = document.querySelector('#msgBoxForActivity')
 //function
 function renderExercises() {
     allExercises = document.querySelectorAll('[exercise-id]')
@@ -215,6 +216,8 @@ function exerciseTurnAround() {
         if (exerciseSteps < Math.floor((allExerciseSteps / 4))) exerciseSpeed += 8
     } else {
         exerciseData[currentExercise].openModal()
+        _msgBoxForExercise.innerHTML = ''
+        _msgBoxForExercise.innerHTML = `<h2>${exerciseData[currentExercise]['description']}</h2>`
 
     }
 }
@@ -242,9 +245,8 @@ function activityTurnAround() {
 
         if (activitySteps < Math.floor((allActivitiesSteps / 4))) activitySpeed += 8
     } else {
-        _msgBox.innerHTML = ''
-        _msgBox.innerHTML = `
-                            <h2>${exerciseData[currentExercise]['description']}</h2>
+        _msgBoxForActivity.innerHTML = ''
+        _msgBoxForActivity.innerHTML = `
                             <h2>之後</h2>
                             <h2>${activityData[currentActivity]['description']}</h2>`
 

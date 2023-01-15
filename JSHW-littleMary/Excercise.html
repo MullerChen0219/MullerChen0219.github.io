@@ -4,7 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>今天運動了嗎?</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        </link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        </link>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <style>
             i {
                 font-size: 40px;
@@ -23,6 +30,32 @@
                 border: solid 5px  #f5a243;
                 box-shadow: 0 0 20px #f39b3d;
                 transition: 0s;
+            }
+
+            #startBtn {
+                display: inline-block;
+                animation: tada;
+                animation-duration: 1.5s;
+                --animate-repeat:infinite;
+            }
+            .owl-theme .item {
+            height: 30rem;
+            background: #52baf3;
+            padding: 1rem;
+            }
+
+            .owl-carousel .item{
+            color: #fff;
+            font-weight: 400;
+            font-size: 1.4375rem;
+            margin-top: 0rem;
+            }
+            .pic{
+                width: 30rem;
+            }
+            .pic img{
+                vertical-align: middle;
+                width: 100%;
             }
         </style>
     </head>
@@ -68,6 +101,22 @@
                 </div>
             </div>
         </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item d-flex align-items-center"><p >當坐姿連續6小時以上時，便是久坐。久坐對於身體存在多項危害，例如增加心臟病、中風、糖尿病及代謝症候等非傳染性疾病的罹患率，也會造成骨骼的傷害與肌肉的退化，血液循環不佳，甚至會使思考變遲鈍並影響心理健康。</p>
+                    </div>
+                    <div class="item d-flex align-items-center">
+                        <p>國民健康署建議國人每天運動至少30分鐘，分段累積運動量，效果與一次做完一樣，不過每次至少要連續10 分鐘。例如每天應至少運動30分鐘，可以拆成2次15分鐘，或3次10分鐘完成</p>
+                    </div>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="exercise.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- modal -->
         <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
@@ -78,7 +127,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="msgBox"></div>
+                        <div id="msgBoxForExercise"></div>
+                        <div id="msgBoxForActivity"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -86,8 +136,29 @@
                 </div>
             </div>
         </div>
-        <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+        <script>
+            $(".owl-carousel").owlCarousel({
+                loop: true, // 循環播放
+                margin: 10, // 外距 10px
+                autoplay:true,
+                autoplayTimeout:8000,
+                autoplayHoverPause:true,
+                responsive: {
+                    0: {
+                    items: 1 // 螢幕大小為 0~600 顯示 1 個項目
+                    },
+                    600: {
+                    items: 1 // 螢幕大小為 600~1000 顯示 3 個項目
+                    },
+                    1000: {
+                    items: 1// 螢幕大小為 1000 以上 顯示 5 個項目
+                    }
+                }
+            });
+        </script>
         <script src="Excercise.js"></script>
+        <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>
