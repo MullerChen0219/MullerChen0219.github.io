@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>待辦清單</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="TodoList2.0.css">
+    </head>
+    <body>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 task-input d-flex align-items-center">
+                    <div class="list-pic">
+                        <img src="list.svg" alt="icon">
+                    </div>
+                    <input type="text" placeholder="新增待辦事項......">
+                    <button id="addBtn" class="btn btn-primary w-25 ms-2">新增</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="controls d-flex justify-content-between align-items-center">
+                    <div class="filters">
+                        <span id="all" class="active">全部</span>
+                        <span id="pending">未完成</span>
+                        <span id="completed">已完成</span>
+                    </div>
+                    <button class="clear-btn">清除全部</button>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="task-box m-0">
+                    
+                </ul>
+            </div>
+        </div>
+        <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="TodoList2.0.js"></script>
+    </body>
+</html>

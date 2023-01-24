@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body{
+    background-color: rgba(251, 188, 106,.8);
+}
+
+.container{
+    border: 1px solid #999;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: .3rem;
+}
+
+#new-task{
+    position: relative;
+    background-color: #fff;
+    padding: 1.5rem 1.8rem;
+    border-radius: .3rem;
+    box-shadow: 0 1rem 1.5rem rgba(247, 151, 26, 0.8);
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 1rem;
+}
+
+#new-task input{
+    color: #1b1a1acb;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: .6rem .4rem;
+    font-weight: 700;
+}
+
+#new-task input:focus{
+    outline: none;
+    border-color: rgba(247, 151, 26, 0.8);
+}
+
+#tasks{
+    background-color: #fff;
+    position: relative;
+    padding: 1.7rem 1.4rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 1rem 1.5rem rgba(247, 151, 26, 0.8);
+    border-radius: .3rem;
+    width: 100%;
+}
+
+.task{
+    background-color: #fff;
+    padding: 0.3rem .5rem;
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+}
+
+.task span{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.task button{
+    color: #fff;
+    padding: .7rem 0;
+    width: 2.5rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: rgba(245, 33, 33, 0.915);
+}
+
+.edit{
+    background-color: rgba(13, 107, 249, 0.822);
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.completed{
+    text-decoration: line-through;
+}
