@@ -164,7 +164,7 @@ clearCompleted.addEventListener('click', () => {
                     arr.splice(index,1);
                 }
             });
-            while (todos.length != 0) {
+            while (todos.length != 0 && todos.filter(x => x.status == 'completed').length != 0) {
                 deleteLoop('completed');
             }
             localStorage.setItem("todo-list", JSON.stringify(todos));
@@ -182,7 +182,7 @@ clearNotCompleted.addEventListener('click', () => {
                     arr.splice(index, 1);
                 }
             });
-            while (todos.length != 0) {
+            while (todos.length != 0 && todos.filter(x => x.status == 'notCompleted').length != 0) {
                 deleteLoop('notCompleted');
             }
             localStorage.setItem("todo-list", JSON.stringify(todos));
