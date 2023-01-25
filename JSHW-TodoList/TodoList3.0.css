@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body{
+    background: rgba(251, 188, 106, .8);
+}
+
+.container{
+    background: #fff;
+    max-width: 450px;
+    margin: 135px auto;
+    border-radius: 10px;
+}
+
+.list-pic{
+    width: 2.5rem;
+}
+.list-pic img{
+    width: 100%;
+}
+.task-input{
+    height: 3rem;
+    padding: 0 2rem;
+}
+
+.task-input input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 7px;
+    border: 1px solid #888;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+.task-input input::placeholder{
+    color:#bfbfbf
+}
+.controls{
+    padding: 1.3rem 1.8rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.filters span{
+    cursor: pointer;
+    margin: 0 .5rem;
+    font-size: 1.3rem;
+}
+
+.filters span.active{
+    color: rgba(251, 188, 106, .8);
+}
+
+.controls .clear-btn,.clear-notCompletedBtn,.clear-completedBtn{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    padding: .3rem .8rem;
+    background: rgba(251, 188, 106, .8);
+}
+
+.task-box{
+    margin: 1.5rem 1.6rem;
+}
+
+.task-box .task{
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ccc;
+}
+.task-box .task:first-child{
+    margin-top: 1.5rem;
+}
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.task label{
+    display: flex;
+    align-items: center;
+}
+
+.task label p.checked{
+    text-decoration: line-through;
+}
+
+.task label input{
+    margin-top: .5rem;
+    margin-right: .8rem;
+}
+
+.advancedFeatures{
+    cursor: pointer;
+    position: relative;
+}
+
+.advancedFeatures .deleteBtns{
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    padding: .8rem .9rem;
+    right: -0.5rem;
+    bottom: -5rem;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.15);
+}
+
+.advancedFeatures .deleteBtns.show{
+    transform: scale(1);
+}
+
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+
+.settings .task-menu{
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    padding: .3rem .2rem;
+    right: -0.5rem;
+    bottom: -5rem;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 .4rem rgba(0,0,0,0.15);
+}
+
+.settings .task-menu.show{
+    transform: scale(1);
+}
+
+.task-menu li{
+    height: 1.8rem;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.1rem;
+    justify-content: flex-start;
+    writing-mode: horizontal-tb;
+}
+
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+
+.task-menu li:hover{
+    background: #ccc;
+}
+
+.task-menu li i{
+    padding-right: .5rem;
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p{
+    margin: 0;
+}
