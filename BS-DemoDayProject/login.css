@@ -1,0 +1,82 @@
+:root {
+    --kk-primary: #22a7aa;
+    --kk-primary-hover: #197f81;
+    --kk-text-color: #666;
+    --kk-title-color: #333;
+    --kk-price-color: #212121;
+
+    --kk-title-size: 22px;
+    --kk-text-size: 14px;
+}
+
+.modal-content::before{
+    content:'';
+    height: 10px;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(65deg, #64b3f4, var(--kk-primary) 60%);
+}
+.modal{
+    --bs-modal-header-border-color:none;
+    --bs-modal-footer-border-color:none;
+}
+.btn-close:focus{
+    --bs-btn-close-focus-shadow:none;
+}
+.login-list a{
+    position: relative;
+    padding: 1rem 1.2rem;
+    margin-bottom: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    color: var(--kk-text-color);
+    text-decoration: none;
+}
+.login-list a:hover{
+    border-color: var(--kk-text-color);
+    border-radius: 40px;
+}
+.login-list a i{
+    font-size: 22px;
+}
+
+.login-list a img,.login-list a i{
+    vertical-align: middle;
+    position: absolute;
+    left: 5%;
+}
+
+#login-btn,#reset-password-btn{
+    color: #fff;
+    background-color: var(--kk-primary);
+    border: none;
+    border-radius: 10px;
+}
+
+#login-btn:hover{
+    background-color: var(--kk-primary-hover);
+    transition: .5s;
+}
+.email-login,.password-login{
+    color: var(--kk-text-color);
+}
+.register-now,.forgot-password a{
+    color: var(--kk-text-color);
+    text-decoration: none;
+}
+
+.register-now:hover,.forgot-password a:hover{
+    text-decoration: underline;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:var(--kk-primary);
+}
+
+.privacy-policy a{
+    color: var(--kk-primary);
+    text-decoration: none;
+}
+.privacy-policy a:hover{
+    text-decoration: underline;
+}

@@ -11,6 +11,7 @@ const addBtn = document.querySelector('#addBtn');
 const clearAll = document.querySelector('.clear-btn');
 let filters = document.querySelectorAll('.filters span');
 
+//
 addBtn.addEventListener('click', (e) => {
     let userTask = taskInput.value.trim();
     if (userTask != '') {
@@ -41,6 +42,7 @@ addBtn.addEventListener('click', (e) => {
     
 })
 
+//Enter
 taskInput.addEventListener('keyup', (e) => {
     let userTask = taskInput.value.trim();
     if (e.key == 'Enter' && userTask) {

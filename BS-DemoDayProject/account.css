@@ -1,0 +1,12 @@
+:root {
+    --kk-primary: #22a7aa;
+    --kk-text-color: #666;
+    --kk-title-color: #333;
+    --kk-price-color: #212121;
+    --kk-account-bg-color: #F5F5F5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
