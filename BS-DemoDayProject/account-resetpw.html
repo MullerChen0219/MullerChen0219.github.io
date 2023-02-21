@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>account</title>
+        <title>account-resetpw</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel="stylesheet" href="account.css">
+        <link rel="stylesheet" href="account-resetpw.css">
     </head>
     <body>
         <section class="account-main p-5">
@@ -34,7 +34,7 @@
                                             <img src="images/facebook.svg" alt="">
                                         </div>
                                         <div class="certified-text p-2 text-start">
-                                            <span>Facebook</span>
+                                            <span>FaceBook</span>
                                         </div>
                                     </div>
                                     <div class="certified d-flex align-items-center">
@@ -56,13 +56,13 @@
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a id="account-class" class="d-flex align-items-center p-3" href="account-membership.html">
+                                    <a id="account-class" class="d-flex align-items-center p-3" href="#">
                                         <span class="icon-box"><i class="fa-solid fa-gem"></i></span>
                                         <span class="list-item-title ps-3">我的會籍禮遇</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a id="account-coupons" class="d-flex align-items-center p-3" href="coupons.html">
+                                    <a id="account-coupons" class="d-flex align-items-center p-3" href="#">
                                         <span class="icon-box"><i class="fa-solid fa-ticket"></i></span>
                                         <span class="list-item-title ps-3">KKday 折扣券</span>
                                         <span class="coupon-quantity">20</span>
@@ -106,63 +106,42 @@
                                 </ul>
                             </div>
                             <div class="details-content p-4">
+                                <span class="fs-4 d-block mb-2">更改密碼</span>
                                 <div class="row">
-                                    <div class="col-4">
-                                        <label for="">名</label>
+                                    <div class="col-12">
+                                        <label for="">原密碼*</label>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="名" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="原密碼" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label for="">姓</label>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="">新密碼*</label>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="姓" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="新密碼" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="">性別</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>請選擇</option>
-                                            <option value="1">不便透漏</option>
-                                            <option value="2">男</option>
-                                            <option value="3">女</option>
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4">
-                                        <label for="">出生日期</label>
+                                    <div class="col-12">
                                         <div class="input-group mb-3">
-                                            <input type="date" class="form-control" placeholder="姓" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="">國家/地區</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>請選擇</option>
-                                            <option value="1">臺灣</option>
-                                            <option value="2">日本</option>
-                                            <option value="3">韓國</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="">電話號碼</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="電話號碼" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <label for="">聯絡 E-mail*</label>
-                                        <div class="input-group mb-3">
-                                            <input type="email" class="form-control" placeholder="聯絡 E-mail*" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="再次確認新密碼" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="save ms-auto">
                                     <a class="save-link px-3 py-2" href="#">儲存</a>
                                 </div>
+                                <span class="fs-4 d-block mb-2">驗證登入信箱</span>
+                                <div class="email-certified d-flex">
+                                    <span class="fs-5 me-2">muller1110505@gmail.com</span>
+                                    <div class="certified-msg d-flex align-items-center">
+                                        <i class="fa-solid fa-shield-halved px-1"></i>
+                                        <span class="fs-5 px-1">尚未驗證</span>
+                                    </div>
+                                </div>
+                                <a class="resend d-block mt-3 p-3" href="#">重新發送認證信</a>
                             </div>
                         </div>
                     </div>

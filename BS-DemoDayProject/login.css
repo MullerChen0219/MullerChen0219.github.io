@@ -46,6 +46,8 @@
 }
 
 #login-btn,#reset-password-btn{
+    text-align: center;
+    text-decoration: none;
     color: #fff;
     background-color: var(--kk-primary);
     border: none;

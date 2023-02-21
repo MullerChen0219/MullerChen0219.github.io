@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
+        <title>login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="login.css">
     </head>
@@ -11,7 +11,7 @@
         
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login">
-        Launch static backdrop modal
+        會員登入
         </button>
         
         <!-- login-Modal -->
@@ -27,9 +27,9 @@
                             <span class="fs-5">立即登入，隨時收到獨家優惠</span>
                         </div>
                         <div class="login-list text-center d-flex flex-column mb-5 mx-auto w-75">
+                            <a clsss="d-block" href="#"><img src="images/facebook.svg" alt="">使用FaceBook繼續</a>
                             <a clsss="d-block" href="#"><img src="images/google.svg" alt="">使用Google繼續</a>
-                            <a clsss="d-block" href="#"><img src="images/line.svg" alt="">使用Line繼續</a>
-                            <a id="login-by-email-btn" clsss="d-block" href="#"><i class="fa-solid fa-envelope"></i>使用電子郵件繼續</a>
+                            <a id="login-by-email-btn" data-bs-toggle="modal" data-bs-target="#login-by-email" clsss="d-block" href="#"><i class="fa-solid fa-envelope"></i>使用電子郵件繼續</a>
                         </div>
                     </div>
                 </div>
@@ -49,19 +49,19 @@
                         </div>
                         <div class="email-login w-75 mx-auto mb-3 d-flex align-items-center">
                             <i class="fa-solid fa-envelope pe-2"></i>
-                            <input type="email" class="form-control" id="email-input" placeholder="電子郵件">
+                            <input type="email" class="form-control" id="email-input-login" placeholder="電子郵件">
                         </div>
                         <div class="password-login w-75 mx-auto mb-3 d-flex align-items-center">
                             <i class="fa-solid fa-lock pe-2"></i>
-                            <input type="password" class="form-control" id="password-input" placeholder="密碼">
+                            <input type="password" class="form-control" id="password-input-login" placeholder="密碼">
                         </div>
                     </div>
                     <div class="modal-footer flex-column">
                         <div class="forgot-password">
-                            <a id="forget-password-link" href="#">忘記密碼</a>
+                            <a id="forget-password-link" data-bs-toggle="modal" data-bs-target="#forgot-password-modal" href="#">忘記密碼</a>
                         </div>
-                        <button id="login-btn" class="w-75 mx-auto p-2">登入</button>
-                        <a id="register-link" class="register-now mx-auto" href="#">還未加入EveryDay嗎？立即註冊！</a>
+                        <a id="login-btn-email" class="w-75 mx-auto p-2" href="account.html">登入</a>
+                        <a id="register-link" class="register-now mx-auto" data-bs-toggle="modal" data-bs-target="#register" href="#">還未加入EveryDay嗎？立即註冊！</a>
                     </div>
                 </div>
             </div>
@@ -79,11 +79,11 @@
                         </div>
                         <div class="email-login w-75 mx-auto mb-3 d-flex align-items-center">
                             <i class="fa-solid fa-envelope pe-2"></i>
-                            <input type="email" class="form-control" id="email-input" placeholder="電子郵件">
+                            <input type="email" class="form-control" id="email-input-register" placeholder="電子郵件">
                         </div>
                         <div class="password-login w-75 mx-auto mb-3 d-flex align-items-center">
                             <i class="fa-solid fa-lock pe-2"></i>
-                            <input type="password" class="form-control" id="password-input" placeholder="密碼">
+                            <input type="password" class="form-control" id="password-input-register" placeholder="密碼">
                         </div>
                     </div>
                     <div class="modal-footer flex-column">
@@ -94,8 +94,8 @@
                         <div class="is-robot">
                             <!-- 待補機器人驗證 -->
                         </div>
-                        <button id="login-btn" class="w-75 mx-auto p-2">註冊</button>
-                        <a id="login-now" class="register-now mx-auto" href="#">已成為會員？立即登入</a>
+                        <a id="login-btn-register" class="w-75 mx-auto p-2">註冊</a>
+                        <a id="login-now" data-bs-toggle="modal" data-bs-target="#login-by-email" class="register-now mx-auto" href="#">已成為會員？立即登入</a>
                     </div>
                 </div>
             </div>
@@ -112,11 +112,11 @@
                         </div>
                         <div class="email-login w-75 mx-auto mb-3 d-flex align-items-center">
                             <i class="fa-solid fa-envelope pe-2"></i>
-                            <input type="email" class="form-control" id="email-input" placeholder="電子郵件">
+                            <input type="email" class="form-control" id="email-input-forgot" placeholder="電子郵件">
                         </div>
                     </div>
                     <div class="modal-footer flex-column">
-                        <button id="reset-password-btn" class="w-75 mx-auto p-2">重新設定密碼</button>   
+                        <button id="reset-password-btn" data-bs-toggle="modal" data-bs-target="#reset-password-modal" class="w-75 mx-auto p-2">重新設定密碼</button>   
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="modal-footer flex-column">
-                        <button id="login-btn" class="w-75 mx-auto p-2" data-bs-dismiss="modal">了解</button>   
+                        <a id="login-btn-reset" class="w-75 mx-auto p-2" data-bs-dismiss="modal">了解</a>   
                     </div>
                 </div>
             </div>
@@ -145,40 +145,40 @@
         <script>
             //變數
             //DOM
-            const login = document.querySelector('#login');
-            const login_by_email_btn = document.querySelector('#login-by-email-btn');
-            const login_by_email = document.querySelector('#login-by-email');
-            const register = document.querySelector('#register');
-            const register_link = document.querySelector('#register-link');
-            const login_now = document.querySelector('#login-now');
-            const forgot_password_modal = document.querySelector('#forgot-password-modal');
-            const forget_password_link = document.querySelector('#forget-password-link');
-            const reset_password_btn = document.querySelector('#reset-password-btn');
-            const reset_password_modal = document.querySelector('#reset-password-modal');
-            login_by_email_btn.addEventListener('click', () => {
-                bootstrap.Modal.getOrCreateInstance(login).hide();
-                bootstrap.Modal.getOrCreateInstance(login_by_email).show();
-            })
+            // const login = document.querySelector('#login');
+            // const login_by_email_btn = document.querySelector('#login-by-email-btn');
+            // const login_by_email = document.querySelector('#login-by-email');
+            // const register = document.querySelector('#register');
+            // const register_link = document.querySelector('#register-link');
+            // const login_now = document.querySelector('#login-now');
+            // const forgot_password_modal = document.querySelector('#forgot-password-modal');
+            // const forget_password_link = document.querySelector('#forget-password-link');
+            // const reset_password_btn = document.querySelector('#reset-password-btn');
+            // const reset_password_modal = document.querySelector('#reset-password-modal');
+            // login_by_email_btn.addEventListener('click', () => {
+            //     bootstrap.Modal.getOrCreateInstance(login).hide();
+            //     bootstrap.Modal.getOrCreateInstance(login_by_email).show();
+            // })
 
-            register_link.addEventListener('click', () => {
-                bootstrap.Modal.getOrCreateInstance(login_by_email).hide();
-                bootstrap.Modal.getOrCreateInstance(register).show();
-            })
+            // register_link.addEventListener('click', () => {
+            //     bootstrap.Modal.getOrCreateInstance(login_by_email).hide();
+            //     bootstrap.Modal.getOrCreateInstance(register).show();
+            // })
 
-            login_now.addEventListener('click', () => {
-                bootstrap.Modal.getOrCreateInstance(register).hide();
-                bootstrap.Modal.getOrCreateInstance(login_by_email).show();
-            })
+            // login_now.addEventListener('click', () => {
+            //     bootstrap.Modal.getOrCreateInstance(register).hide();
+            //     bootstrap.Modal.getOrCreateInstance(login_by_email).show();
+            // })
 
-            forget_password_link.addEventListener('click', () => {
-                bootstrap.Modal.getOrCreateInstance(login_by_email).hide();
-                bootstrap.Modal.getOrCreateInstance(forgot_password_modal).show();
-            })
+            // forget_password_link.addEventListener('click', () => {
+            //     bootstrap.Modal.getOrCreateInstance(login_by_email).hide();
+            //     bootstrap.Modal.getOrCreateInstance(forgot_password_modal).show();
+            // })
 
-            reset_password_btn.addEventListener('click', () => {
-                bootstrap.Modal.getOrCreateInstance(forgot_password_modal).hide();
-                bootstrap.Modal.getOrCreateInstance(reset_password_modal).show();
-            })
+            // reset_password_btn.addEventListener('click', () => {
+            //     bootstrap.Modal.getOrCreateInstance(forgot_password_modal).hide();
+            //     bootstrap.Modal.getOrCreateInstance(reset_password_modal).show();
+            // })
             //Function
             //Window.onload
         </script>
