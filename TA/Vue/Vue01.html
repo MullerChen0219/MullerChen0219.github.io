@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>  <!-- development version -->
+</head>
+<body>
+    <!-- 透過資料渲染畫面 -->
+    <!-- <div id="app">
+        <h1>...</h1>
+    </div> -->
+
+    <div id="app1">
+        <h1>{{ title }}</h1>
+        <h1>{{ number + 12 }}</h1>  <!--別這樣寫 HTML 裡不該有邏輯-->
+        <h1>{{ isTrue ? 'A' : 'B' }}</h1>
+        <h1>{{ price | currency }}</h1>
+    </div>
+
+    <div id="app2">
+        <h1>{{ title }}</h1>
+    </div>
+    <script>
+        // Vanallia JS
+        // const h1 = document.querySelector('#app h1')
+        // h1.innerText = 'Build School'
+
+        //Vue
+        const app1 = new Vue({
+            name: 'Muller', //為new出來的實體(instance)命名(選擇性)
+            el: '#app1',
+            data: {
+                title: 'Build School',
+                number: 10,
+                isTrue: false,
+                price: 123456789
+            },
+            filters: {
+                currency(val) {
+                    return `NT$ ${val.toLocaleString('en-us')}` //利用filters 將price過濾成格式
+                }
+            }
+        })
+        const app2 = new Vue({
+            name:'app2',
+            el: '#app2',
+            data: {
+                title: 'App2'
+            }
+        })
+    </script>
+</body>
+</html>

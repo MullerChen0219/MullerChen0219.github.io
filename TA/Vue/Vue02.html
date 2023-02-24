@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue02 v-if v-else v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="isVisiable">Andy</h1>         
+        <h1 v-else="!isVisiable">Jimmy</h1>     <!-- 只要條件不符合 連Dom元素都不會存在 -->
+
+        <h1 v-show="isVisiable">Bill</h1>   <!-- 即使條件不符合 v-show 在Dom Tree中仍存在 但被賦予style="display: none;" -->
+
+        <button @click="visiableHandle">點我</button>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                isVisiable: false
+            },
+            methods: {
+                visiableHandle() {
+                    this.isVisiable = !this.isVisiable //Click 後 isVisiable 的值變更為true/false
+                }
+            }
+        })
+    </script>
+</body>
+</html>

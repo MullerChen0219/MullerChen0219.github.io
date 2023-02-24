@@ -45,7 +45,7 @@
     left: 5%;
 }
 
-#login-btn,#reset-password-btn{
+#login-btn-reset,#login-btn-email,#login-btn-register,#reset-password-btn{
     text-align: center;
     text-decoration: none;
     color: #fff;
