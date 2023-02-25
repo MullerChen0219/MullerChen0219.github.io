@@ -18,17 +18,7 @@
         xfbml      : true,
         version    : 'v16.0' //筆者目前是v3.1
         });
-        FB.AppEvents.logPageView();
-        function checkLoginState() {
-
-    FB.getLoginStatus(function (response) {
-        if(response.status === 'connected'){
-        console.log('你已經登入囉')
-        }else{
-        login()
-        }
-    });
-    }   
+        FB.AppEvents.logPageView();   
     };
 
     (function(d, s, id){
@@ -56,7 +46,16 @@
         auth_type: 'rerequest'
         });
     }
-    
+    function checkLoginState() {
+
+    FB.getLoginStatus(function (response) {
+        if(response.status === 'connected'){
+        console.log('你已經登入囉')
+        }else{
+        login()
+        }
+    });
+    }
     </script>
 </body>
 </html>
