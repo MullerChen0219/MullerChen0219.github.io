@@ -7,7 +7,7 @@
     <title>Test FB Login</title>
 </head>
 <body>
-    <button onclick="checkLoginState()">登入</button>
+    <button onclick="FBLogin()">登入</button>
     <button onclick="logout()">登出</button>
     
     <script>
@@ -31,31 +31,38 @@
 
 
     
-    function login() {
-    FB.login(function (response) {
-        console.log(response);
-        if (response.status === "connected") {
-        FB.api('/me', {
-            'fields': 'id,name,email,picture'
-        }, function (response) {
-            console.log(response);
-        });
-        }
-    }, {
-        scope: 'email',
-        auth_type: 'rerequest'
-        });
-    }
-    function checkLoginState() {
+    function FBLogin() {
+            FB.getLoginStatus(function (res) {
+                console.log(`status:${res.status}`);//Debug
 
-    FB.getLoginStatus(function (response) {
-        if(response.status === 'connected'){
-        console.log('你已經登入囉')
-        }else{
-        login()
+                if (res.status === "connected") { 
+                    let userID = res["authResponse"]["userID"];
+                    console.log("用戶已授權您的App，用戶須先revoke撤除App後才能再重新授權你的App");
+                    console.log(`已授權App登入FB 的 userID:${userID}`);
+                    GetProfile();
+                } else if (res.status === 'not_authorized' || res.status === "unknown") {
+                    //App未授權或用戶登出FB網站才讓用戶執行登入動作
+                    FB.login(function (response) {
+
+                        //console.log(response); //debug用
+                        if (response.status === 'connected') {
+                            //user已登入FB
+                            //抓userID
+                            let userID = response["authResponse"]["userID"];
+                            console.log(`已授權App登入FB 的 userID:${userID}`);
+                            GetProfile();
+
+                        } else {
+                            // user FB取消授權
+                            alert("Facebook帳號無法登入");
+                        }
+                        //"public_profile"可省略，仍然可以取得name、userID
+                    }, { scope: 'email' }); 
+                }
+            });
+
+
         }
-    });
-    }
     </script>
 </body>
 </html>
