@@ -11,6 +11,7 @@
     <button onclick="logout()">登出</button>
     
     <script>
+
         window.fbAsyncInit = function() {
     FB.init({
         appId      : '3389736944622065',//15碼數字字串不含大括號
@@ -18,7 +19,7 @@
         xfbml      : true,
         version    : '16.0' //筆者目前是v3.1
         });
-        
+        debugger;
         FB.AppEvents.logPageView();   
         
     };
@@ -32,35 +33,35 @@
     }(document, 'script', 'facebook-jssdk'));
 
 
-    FB.getLoginStatus(function(response) {
-    console.log(statusChangeCallback(response));
+    // FB.getLoginStatus(function(response) {
+    // console.log(statusChangeCallback(response));
     
-    });
-            function login() {
-    FB.login(function (response) {
-        console.log(response);
-        if (response.status === "connected") {
-        FB.api('/me', {
-            'fields': 'id,name,email,picture'
-        }, function (response) {
-            console.log(response);
-        });
-        }
-    }, {
-        scope: 'email',
-        auth_type: 'rerequest'
-        });
-    }
+    // });
+    // function login() {
+    // FB.login(function (response) {
+    //     console.log(response);
+    //     if (response.status === "connected") {
+    //     FB.api('/me', {
+    //         'fields': 'id,name,email,picture'
+    //     }, function (response) {
+    //         console.log(response);
+    //     });
+    //     }
+    // }, {
+    //     scope: 'email',
+    //     auth_type: 'rerequest'
+    //     });
+    // }
 
-        function checkLoginState() {
-    FB.getLoginStatus(function (response) {
-        if(response.status === 'connected'){
-        console.log('你已經登入囉')
-        }else{
-        login()
-        }
-    });
-    }
+    //     function checkLoginState() {
+    // FB.getLoginStatus(function (response) {
+    //     if(response.status === 'connected'){
+    //     console.log('你已經登入囉')
+    //     }else{
+    //     login()
+    //     }
+    // });
+    // }
     </script>
 </body>
 </html>
