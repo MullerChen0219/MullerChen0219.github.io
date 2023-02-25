@@ -7,8 +7,15 @@
     <title>Test FB Login</title>
 </head>
 <body>
-    <button onclick="FBLogin()">登入</button>
-    <button onclick="Del_FB_App()">登出</button>
+    <div>
+        Facebook登入並取得用戶姓名、email：<input type="button" value="Facebook登入" onclick="FBLogin();" />
+    </div>
+    <div>
+        <!--留意用戶的此頁，你的App會被移除：https://www.facebook.com/settings?tab=applications-->
+        用戶刪除授權的App(撤銷登入)：<input type="button" value="Disconnect App" onclick="Del_FB_App()" />
+    </div>
+    <!--顯示用戶的姓名、email↓-->
+    <div id="content"></div>
     
     <script>
         window.fbAsyncInit = function() {
