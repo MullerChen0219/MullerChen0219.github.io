@@ -11,7 +11,6 @@
     <button onclick="logout()">登出</button>
     
     <script>
-
         window.fbAsyncInit = function() {
     FB.init({
         appId      : '3389736944622065',//15碼數字字串不含大括號
@@ -19,9 +18,30 @@
         xfbml      : true,
         version    : 'v16.0' //筆者目前是v3.1
         });
-        FB.AppEvents.logPageView();   
-        
-        function login() {
+        FB.AppEvents.logPageView();
+        function checkLoginState() {
+
+    FB.getLoginStatus(function (response) {
+        if(response.status === 'connected'){
+        console.log('你已經登入囉')
+        }else{
+        login()
+        }
+    });
+    }   
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    
+    function login() {
     FB.login(function (response) {
         console.log(response);
         if (response.status === "connected") {
@@ -36,29 +56,6 @@
         auth_type: 'rerequest'
         });
     }
-
-        function checkLoginState() {
-    FB.getLoginStatus(function (response) {
-        if(response.status === 'connected'){
-        console.log('你已經登入囉')
-        }else{
-        login()
-        }
-    });
-    }
-        
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-
-    
     
     </script>
 </body>
