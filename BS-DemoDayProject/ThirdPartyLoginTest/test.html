@@ -19,7 +19,6 @@
         xfbml      : true,
         version    : 'v16.0' //筆者目前是v3.1
         });
-        debugger;
         FB.AppEvents.logPageView();   
         
     };
@@ -33,35 +32,35 @@
     }(document, 'script', 'facebook-jssdk'));
 
 
-    // FB.getLoginStatus(function(response) {
-    // console.log(statusChangeCallback(response));
+    FB.getLoginStatus(function(response) {
+    console.log(statusChangeCallback(response));
     
-    // });
-    // function login() {
-    // FB.login(function (response) {
-    //     console.log(response);
-    //     if (response.status === "connected") {
-    //     FB.api('/me', {
-    //         'fields': 'id,name,email,picture'
-    //     }, function (response) {
-    //         console.log(response);
-    //     });
-    //     }
-    // }, {
-    //     scope: 'email',
-    //     auth_type: 'rerequest'
-    //     });
-    // }
+    });
+    function login() {
+    FB.login(function (response) {
+        console.log(response);
+        if (response.status === "connected") {
+        FB.api('/me', {
+            'fields': 'id,name,email,picture'
+        }, function (response) {
+            console.log(response);
+        });
+        }
+    }, {
+        scope: 'email',
+        auth_type: 'rerequest'
+        });
+    }
 
-    //     function checkLoginState() {
-    // FB.getLoginStatus(function (response) {
-    //     if(response.status === 'connected'){
-    //     console.log('你已經登入囉')
-    //     }else{
-    //     login()
-    //     }
-    // });
-    // }
+        function checkLoginState() {
+    FB.getLoginStatus(function (response) {
+        if(response.status === 'connected'){
+        console.log('你已經登入囉')
+        }else{
+        login()
+        }
+    });
+    }
     </script>
 </body>
 </html>
